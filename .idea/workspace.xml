@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="42bbe568-ac44-4d10-a62c-f853586ce532" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/configuration/databaseConnection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configuration/env.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/controller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/productController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/sessionController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/product.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/user.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/index/content.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1kACwTitt7qm7qkfJIjVlW4Pnm3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="42bbe568-ac44-4d10-a62c-f853586ce532" name="Default Changelist" comment="" />
+      <created>1605134247713</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605134247713</updated>
+      <workItem from="1605134248785" duration="1254000" />
+      <workItem from="1605138007604" duration="8138000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="437" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605145521002">
+      <screen x="0" y="23" width="1680" height="956" />
+    </state>
+    <state x="437" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1680.956@0.23.1680.956" timestamp="1605145521002" />
+    <state x="437" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1680.958@0.23.1680.958" timestamp="1605139912784" />
+    <state x="566" y="235" key="NewPhpClassDialog" timestamp="1605139685792">
+      <screen x="0" y="23" width="1680" height="958" />
+    </state>
+    <state x="566" y="235" key="NewPhpClassDialog/0.23.1680.958@0.23.1680.958" timestamp="1605139685792" />
+    <state x="659" y="431" key="NewPhpFileDialog" timestamp="1605146155181">
+      <screen x="0" y="23" width="1680" height="956" />
+    </state>
+    <state x="659" y="431" key="NewPhpFileDialog/0.23.1680.956@0.23.1680.956" timestamp="1605146155181" />
+    <state x="659" y="432" key="NewPhpFileDialog/0.23.1680.958@0.23.1680.958" timestamp="1605139693884" />
+    <state x="659" y="433" key="NewPhpFileDialog/0.23.1680.960@0.23.1680.960" timestamp="1605138014634" />
+  </component>
+</project>
