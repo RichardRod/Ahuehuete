@@ -27,7 +27,7 @@ class Product
         try
         {
             $statement = $this->connection->query("SELECT * FROM Products");
-            $products[] = null;
+            //$products[] = null;
 
             while ($row = $statement->fetch_array())
             {

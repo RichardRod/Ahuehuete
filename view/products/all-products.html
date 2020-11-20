@@ -1,0 +1,15 @@
+<head>
+    <meta charset="UTF-8">
+    <meta  name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Productos</title>
+    <link rel="stylesheet" href="view/products/css/styles.css">
+</head>
+<div id="product-grid">
+    <div class="product-item">
+        <form method="post" action="index.php?action=add&code={productId}">
+            <h2>{productName}</h2>
+            <h2>{productDescription}</h2>
+            <div class="cart-action"><input type="text" class="product-quantity" name="quantity" value="1" size="2"/><input type="submit" value="Agregar al Carrito" class="btnAddAction"/></div>
+        </form>
+    </div>
+</div>
