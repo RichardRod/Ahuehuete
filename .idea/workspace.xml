@@ -20,13 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42bbe568-ac44-4d10-a62c-f853586ce532" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/view/products/all-products.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/products/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/users/login/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/users/login/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/users/signin/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/users/signin/signin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Ahuehuete.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configuration/env.php" beforeDir="false" afterPath="$PROJECT_DIR$/configuration/env.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/productController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/productController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/sessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/sessionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,8 +63,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/view/users/signin" />
+      <recent name="$PROJECT_DIR$/view/users/login" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -70,9 +81,8 @@
       <option name="presentableId" value="Default" />
       <updated>1605134247713</updated>
       <workItem from="1605134248785" duration="1254000" />
-      <workItem from="1605138007604" duration="8138000" />
-      <workItem from="1605227479744" duration="6484000" />
-      <workItem from="1605281033481" duration="599000" />
+      <workItem from="1605138007604" duration="8640000" />
+      <workItem from="1609345765491" duration="5916000" />
     </task>
     <servers />
   </component>
@@ -107,9 +117,5 @@
     <state x="659" y="431" key="NewPhpFileDialog/0.23.1680.956@0.23.1680.956" timestamp="1605146155181" />
     <state x="659" y="432" key="NewPhpFileDialog/0.23.1680.958@0.23.1680.958" timestamp="1605139693884" />
     <state x="659" y="433" key="NewPhpFileDialog/0.23.1680.960@0.23.1680.960" timestamp="1605138014634" />
-    <state x="464" y="190" width="992" height="733" key="SettingsEditor" timestamp="1605227917493">
-      <screen x="0" y="30" width="1920" height="1050" />
-    </state>
-    <state x="464" y="190" width="992" height="733" key="SettingsEditor/0.30.1920.1050@0.30.1920.1050" timestamp="1605227917493" />
   </component>
 </project>

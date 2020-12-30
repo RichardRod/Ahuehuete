@@ -15,14 +15,22 @@ class SessionController extends controller {
 
     public function run() {
 
-        echo 'olanda k ase';
+        echo 'Execute SessionController';
 
         switch ($_GET['action']) {
 
             case 'sign':
-                $this->sign();
+
+                $this->signinForm();
 
                 //header("Location: http://floval.mx/index.php");
+
+                break;
+
+            case 'register':
+
+                $this->signin();
+
                 break;
 
             case 'login':
@@ -30,19 +38,49 @@ class SessionController extends controller {
 
                 //header("Location: http://floval.mx/index.php");
                 break;
+
+            case 'logout':
+                session_start();
+                session_unset();
+                session_destroy();
+
+                break;
         }
 
     }
 
-    private function sign() {
+    private function signinForm() {
 
-        echo 'Sandy';
+        $header = file_get_contents('view/header.html');
+        $content = file_get_contents('view/users/signin/signin.html');
+        $footer = file_get_contents('view/footer.html');
+
+
+        echo $header . $content . $footer;
+
+    }
+
+    private function signin()
+    {
+
+        if($_SERVER["REQUEST_METHOD"] == "POST")
+        {
+            $newUser = new User();
+
+            $newUser->username = $_POST['txtUsername'];
+            $newUser->password = $_POST['txtPassword'];
+
+            $this->model->create($newUser);
+
+        }
+
+
 
     }
 
     private function login() {
 
-        echo 'Vianka';
+        echo 'Login';
 
     }
 }
