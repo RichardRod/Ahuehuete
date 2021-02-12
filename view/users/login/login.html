@@ -2,9 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="view/login/css/styles.css">
 
-</body>
-</html>
+</head>
+
+<div>
+    <h2>Iniciar Sesión</h2>
+    <p>Por favor ingrese sus credenciales para iniciar sesión.</p>
+
+    <form action="index.php?control=session&action=session-start" method="post">
+
+        <div>
+            <label for="txtUsername">Usuario:</label>
+            <input name="txtUsername" id="txtUsername" type="text">
+        </div>
+
+        <div>
+            <label for="txtPassword">Contraseña:</label>
+            <input name="txtPassword" id="txtPassword" type="password">
+        </div>
+
+        <div>
+            <input type="submit" value="Enviar">
+        </div>
+
+        <p>No tienes cuenta? <a href="index.php?control=session&action=sign">Registrate aquí</a>.</p>
+    </form>
+</div>

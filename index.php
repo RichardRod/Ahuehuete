@@ -26,15 +26,21 @@ switch ($_GET['control']) {
         $content = null;
         $footer = null;
 
-
-        if (!isset($_SESSION['user'])) {
-            echo 'No seteada AA';
-
+        if (!isset($_SESSION['loggedin'])) {
             $header = file_get_contents('view/header.html');
             $content = file_get_contents('view/index/content.html');
             $footer = file_get_contents('view/footer.html');
         } else {
-            echo 'Si seteada';
+            $header = file_get_contents('view/header-loggedin.html');
+            $content = file_get_contents('view/index/content.html');
+            $footer = file_get_contents('view/footer.html');
+
+            $map = array(
+                '{username}' => $_SESSION['username'],
+            );
+
+            $header = strtr($header, $map);
+            echo $_SESSION['username'];
         }
 
         echo $header . $content . $footer;

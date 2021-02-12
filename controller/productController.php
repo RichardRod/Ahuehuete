@@ -30,7 +30,7 @@ class ProductController extends controller {
                 if (!empty($products)) {
 
 
-                    echo count($products);
+                    //echo count($products);
 
                     $startRow = strrpos($content, '<div>');
                     $endRow = strrpos($content, '</div>') ;
@@ -44,6 +44,7 @@ class ProductController extends controller {
                         $dictionary = array(
                             '{productId}' => $row['ProductId'],
                             '{productName}' => $row['Name'],
+                            '{productPrice}' => $row['Price'],
                             '{productDescription}' => $row['Description']
                         );
 
@@ -62,6 +63,10 @@ class ProductController extends controller {
                 echo $header . $content . $footer;
 
                 //header("Location: http://floval.mx/index.php");
+                break;
+
+            case 'vianka':
+                echo 'Vamos!';
                 break;
 
         }

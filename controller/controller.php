@@ -6,7 +6,7 @@ abstract class controller
     public static function isLogged()
     {
 
-        if (isset($_SESSION['userName'])) {
+        if (isset($_SESSION['user'])) {
             return true;
         } else {
             return false;

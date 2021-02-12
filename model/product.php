@@ -40,4 +40,9 @@ class Product
         }
     }
 
+    public function create()
+    {
+
+    }
+
 }
