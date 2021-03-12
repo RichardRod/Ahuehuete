@@ -20,29 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42bbe568-ac44-4d10-a62c-f853586ce532" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/view/header-loggedin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/pdfGenerator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fpdf.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cactus.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/conexion.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/productController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/productController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/sessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/sessionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flowers.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flowersHC.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/new_session.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/new_user.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/us.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_session.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/products/all-products.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/products/all-products.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/users/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/users/login/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/users/signin/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/users/signin/signin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/~$uehuete doc.docx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,16 +53,31 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/lib" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib" />
       <recent name="$PROJECT_DIR$/view/users/signin" />
       <recent name="$PROJECT_DIR$/view/users/login" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="pdfGenerator.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/controller/pdfGenerator.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.pdfGenerator.php" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -97,6 +92,10 @@
       <workItem from="1609345765491" duration="14007000" />
       <workItem from="1609861177561" duration="1036000" />
       <workItem from="1611340377657" duration="6288000" />
+      <workItem from="1613168938184" duration="415000" />
+      <workItem from="1613574231720" duration="458000" />
+      <workItem from="1613598413711" duration="376000" />
+      <workItem from="1615589497082" duration="314000" />
     </task>
     <servers />
   </component>
@@ -116,25 +115,15 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="437" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605145521002">
-      <screen x="0" y="23" width="1680" height="956" />
+    <state x="578" y="253" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615589607853">
+      <screen x="0" y="23" width="1680" height="951" />
     </state>
-    <state x="437" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1680.956@0.23.1680.956" timestamp="1605145521002" />
-    <state x="437" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1680.958@0.23.1680.958" timestamp="1605139912784" />
-    <state x="578" y="254" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609407891355">
-      <screen x="0" y="23" width="1680" height="956" />
-    </state>
+    <state x="578" y="253" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.951@0.23.1680.951" timestamp="1615589607853" />
     <state x="578" y="254" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.956@0.23.1680.956" timestamp="1609407891355" />
-    <state x="566" y="235" key="NewPhpClassDialog" timestamp="1605139685792">
-      <screen x="0" y="23" width="1680" height="958" />
+    <state x="659" y="429" key="NewPhpFileDialog" timestamp="1615589523524">
+      <screen x="0" y="23" width="1680" height="951" />
     </state>
-    <state x="566" y="235" key="NewPhpClassDialog/0.23.1680.958@0.23.1680.958" timestamp="1605139685792" />
-    <state x="659" y="431" key="NewPhpFileDialog" timestamp="1605146155181">
-      <screen x="0" y="23" width="1680" height="956" />
-    </state>
-    <state x="659" y="431" key="NewPhpFileDialog/0.23.1680.956@0.23.1680.956" timestamp="1605146155181" />
-    <state x="659" y="432" key="NewPhpFileDialog/0.23.1680.958@0.23.1680.958" timestamp="1605139693884" />
-    <state x="659" y="433" key="NewPhpFileDialog/0.23.1680.960@0.23.1680.960" timestamp="1605138014634" />
+    <state x="659" y="429" key="NewPhpFileDialog/0.23.1680.951@0.23.1680.951" timestamp="1615589523524" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
