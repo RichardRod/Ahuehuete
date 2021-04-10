@@ -20,9 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42bbe568-ac44-4d10-a62c-f853586ce532" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controller/pdfGenerator.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/fpdf.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/search-icon.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/index/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/index/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/products/products.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/products/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/index/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/index/content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/products/all-products.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/products/all-products.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/products/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/products/css/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +43,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -53,20 +61,22 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/lib" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
       <recent name="$PROJECT_DIR$/lib" />
       <recent name="$PROJECT_DIR$/view/users/signin" />
       <recent name="$PROJECT_DIR$/view/users/login" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/lib" />
     </key>
   </component>
   <component name="RunManager">
@@ -95,7 +105,8 @@
       <workItem from="1613168938184" duration="415000" />
       <workItem from="1613574231720" duration="458000" />
       <workItem from="1613598413711" duration="376000" />
-      <workItem from="1615589497082" duration="314000" />
+      <workItem from="1615589497082" duration="1887000" />
+      <workItem from="1618015726755" duration="8253000" />
     </task>
     <servers />
   </component>
