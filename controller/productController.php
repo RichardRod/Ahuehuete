@@ -19,9 +19,13 @@ class ProductController extends controller {
 
             case 'list':
 
-                $header = file_get_contents('view/header.html');
+                $header = file_get_contents('view/header/header.html');
+                $contentAux = file_get_contents('view/productos/productos-todos.html');
+                $content = file_get_contents('view/productos/productos-todos.html');
+                $footer = file_get_contents('view/footer/footer.html');
+                /*$header = file_get_contents('view/header.html');
                 $content = file_get_contents('view/products/all-products.html');
-                $footer = file_get_contents('view/footer.html');
+                $footer = file_get_contents('view/footer.html');*/
 
                 $products = $this->model->listProducts();
 
@@ -60,7 +64,7 @@ class ProductController extends controller {
 
 
 
-                echo $header . $content . $footer;
+                echo $header . $contentAux;
 
                 //header("Location: http://floval.mx/index.php");
                 break;

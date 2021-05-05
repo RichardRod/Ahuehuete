@@ -20,17 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42bbe568-ac44-4d10-a62c-f853586ce532" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/images/search-icon.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/index/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/index/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/products/products.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/products/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/footer/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/header/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/home/homepage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/productos/productos-todos.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/productos/productos.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/index/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/index/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/products/all-products.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/products/all-products.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/products/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/products/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/productController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/productController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +40,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -106,7 +103,8 @@
       <workItem from="1613574231720" duration="458000" />
       <workItem from="1613598413711" duration="376000" />
       <workItem from="1615589497082" duration="1887000" />
-      <workItem from="1618015726755" duration="8253000" />
+      <workItem from="1618015726755" duration="8718000" />
+      <workItem from="1620141993808" duration="17830000" />
     </task>
     <servers />
   </component>
@@ -135,36 +133,5 @@
       <screen x="0" y="23" width="1680" height="951" />
     </state>
     <state x="659" y="429" key="NewPhpFileDialog/0.23.1680.951@0.23.1680.951" timestamp="1615589523524" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/controller/productController.php</url>
-          <line>25</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/controller/productController.php</url>
-          <line>37</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/controller/productController.php</url>
-          <line>41</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/controller/productController.php</url>
-          <line>43</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/controller/productController.php</url>
-          <line>55</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
