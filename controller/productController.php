@@ -21,7 +21,7 @@ class ProductController extends controller {
 
                 $header = file_get_contents('view/header/header.html');
                 $contentAux = file_get_contents('view/productos/productos-todos.html');
-                $content = file_get_contents('view/productos/productos-todos.html');
+                $content = file_get_contents('view/productos/productos.html');
                 $footer = file_get_contents('view/footer/footer.html');
                 /*$header = file_get_contents('view/header.html');
                 $content = file_get_contents('view/products/all-products.html');

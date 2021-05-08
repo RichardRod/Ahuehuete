@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Ahuehuete</title>
 
+    <link rel="stylesheet" href="./view/css/all.min.css">
+
 
     <style>
         * {
@@ -110,7 +112,7 @@
         .side {
             -ms-flex: 30%; /* IE10 */
             flex: 30%;
-            background-color: #ebd5bd;
+            background-color: #e1e5ea;
             padding: 20px;
         }
 
@@ -178,17 +180,14 @@
 
 <body>
 
-    <div class="navbar">
-        <a href="index.php" class="active">Inicio</a>
-        <a href="index.php?control=products&action=list">Productos</a>
-        <a href="index.php?control=nosotros&action=mostrar">Nosotros</a>
-        <a href="index.php?control=galeria&action=mostrar">Galeria</a>
-        <a href="index.php?control=contacto&action=formulario">Contacto</a>
-        <a href="index.php?control=session&action=registrarse">Registro</a>
-        <a href="index.php?control=session&action=login">Iniciar Sesión</a>
-        <a href="#" class="right">Mi Carrito</a>
-        <a href="#" class="right">Lista de Deseos</a>
-    </div>
+<div class="navbar">
+    <a href="index.php" class="active">Inicio</a>
+    <a href="index.php?control=products&action=list">Productos</a>
+    <a href="index.php?control=products&action=list">Clientes</a>
+
+    <a href="index.php?control=session&action=logout" class="right">Cerrar Sesión</a>
+    <a href="#" class="right">Hola, Administrador</a>
+</div>
 
 
 

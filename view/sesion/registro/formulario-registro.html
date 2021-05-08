@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar Sesión</title>
+
+    <style>
+
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=password], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+
+        input[type=submit] {
+            background-color: #003366;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+
+        }
+
+        input[type=submit]:hover {
+            background-color: #336699;
+        }
+
+        input {
+            font-size: 15px;
+        }
+
+        textarea {
+            font-size: 15px;
+        }
+
+        .contenedor-principal {
+            padding-right: 30%;
+            padding-left: 30%;
+        }
+
+        .formulario-contacto {
+            border-radius: 5px;
+            background-color: #ebd5bd;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+
+<div class="contenedor-principal">
+    <h3>Registrarse</h3>
+    <div class="formulario-contacto">
+        <form action="index.php?control=session&action=register" method="post">
+            <label for="txt-nombre">Nombre Completo</label>
+            <input type="text" id="txt-nombre" name="txt-nombre" placeholder="Nombre con apellidos">
+
+            <label for="txt-correo">Correo Electronico</label>
+            <input type="text" id="txt-correo" name="txt-correo" placeholder="Correo Electronico">
+
+            <label for="txt-telefono">Teléfono</label>
+            <input type="text" id="txt-telefono" name="txt-telefono" placeholder="Teléfono">
+
+            <label for="txt-password">Crea tu Contraseña</label>
+            <input type="password" id="txt-password" name="txt-password" placeholder="Contraseña">
+
+            <label for="txt-password-confirmacion">Confirma tu Contraseña</label>
+            <input type="password" id="txt-password-confirmacion" name="txt-password-confirmacion" placeholder="Repite tu contraseña">
+
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</div>

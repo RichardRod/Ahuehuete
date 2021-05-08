@@ -6,11 +6,9 @@ class User {
 
     private $connection;
 
-    public $userId;
-    public $username;
-    public $name;
-    public $email;
-    public $phone;
+    public $nombre;
+    public $correo;
+    public $telefono;
     public $password;
 
     public function __construct()
@@ -28,14 +26,14 @@ class User {
     {
         $password = password_hash($user->password, PASSWORD_DEFAULT);
 
-        $sql = "INSERT INTO Ahuehuete.Users
-        (Username, Name, Email, Phone, Password, created_at)
-        VALUES('$user->username', '$user->name', '$user->email', '$user->phone', '$password', CURRENT_TIMESTAMP)
-        ";
+        $sqlQuery = "INSERT INTO 
+                    Ahuehuete.Usuario(NOMBRE, CORREO, TELEFONO, PASSWORD, FECHA_REGISTRO, TIPO_USUARIO) 
+                    VALUES('$user->nombre', '$user->correo', '$user->telefono', '$password', CURRENT_TIMESTAMP, 1)";
+
 
         try
         {
-            $this->connection->query($sql);
+            $this->connection->query($sqlQuery);
         } catch (Exception $ex)
         {
             echo $ex;
@@ -44,7 +42,12 @@ class User {
 
     public function getUser(User $user)
     {
-        $sql = "SELECT * FROM Ahuehuete.Users WHERE Username = '$user->username'";
+        echo '------';
+        var_dump($user->correo);
+        echo '------';
+        $sql = "SELECT * FROM Ahuehuete.Usuario WHERE CORREO = '$user->correo'";
+
+        var_dump($sql);
 
         try
         {

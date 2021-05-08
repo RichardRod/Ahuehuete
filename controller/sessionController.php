@@ -22,7 +22,7 @@ class SessionController extends controller
 
         switch ($_GET['action']) {
 
-            case 'sign':
+            case 'registrarse':
                 $this->signinForm();
                 break;
 
@@ -50,9 +50,9 @@ class SessionController extends controller
 
     private function signinForm()
     {
-        $header = file_get_contents('view/header.html');
-        $content = file_get_contents('view/users/signin/signin.html');
-        $footer = file_get_contents('view/footer.html');
+        $header = file_get_contents('view/header/header.html');
+        $content = file_get_contents('view/sesion/registro/formulario-registro.html');
+        $footer = file_get_contents('view/footer/footer.html');
 
         echo $header . $content . $footer;
     }
@@ -62,11 +62,10 @@ class SessionController extends controller
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $newUser = new User();
 
-            $newUser->username = $_POST['txtUsername'];
-            $newUser->name = $_POST['txtName'];
-            $newUser->email = $_POST['txtEmail'];
-            $newUser->phone = $_POST['txtPhone'];
-            $newUser->password = $_POST['txtPassword'];
+            $newUser->nombre = $_POST['txt-nombre'];
+            $newUser->correo = $_POST['txt-correo'];
+            $newUser->telefono = $_POST['txt-telefono'];
+            $newUser->password = $_POST['txt-password'];
 
             $this->model->create($newUser);
 
@@ -76,9 +75,9 @@ class SessionController extends controller
     private function loginForm()
     {
 
-        $header = file_get_contents('view/header.html');
-        $content = file_get_contents('view/users/login/login.html');
-        $footer = file_get_contents('view/footer.html');
+        $header = file_get_contents('view/header/header.html');
+        $content = file_get_contents('view/sesion/iniciar-sesion/formulario-iniciar-sesion.html');
+        $footer = file_get_contents('view/footer/footer.html');
 
         echo $header . $content . $footer;
     }
@@ -89,23 +88,27 @@ class SessionController extends controller
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $user = new User();
 
-            $user->username = $_POST['txtUsername'];
-            $user->password = $_POST['txtPassword'];
+            $user->correo = $_POST['txt-correo'];
+            $user->password = $_POST['txt-password'];
 
             $data = $this->model->getUser($user);
 
-            if (is_null($user)) {
+
+            if (!isset($user)) {
                 echo 'El Usuario No Existe';
             } else {
 
-                if (password_verify($_POST['txtPassword'], $data['5'])) {
+                if (password_verify($_POST['txt-password'], $data['4'])) {
                     session_start();
 
-                    // Store data in session variables
+                    // Iniciar variables de sesión
                     $_SESSION["loggedin"] = true;
                     $_SESSION["id"] = $data['0'];
-                    $_SESSION["username"] = $data['1'];
-                    $_SESSION["name"] = $data['2'];
+                    $_SESSION["nombre"] = $data['1'];
+                    $_SESSION["correo"] = $data['2'];
+                    $_SESSION["telefono"] = $data['3'];
+                    $_SESSION["rfc"] = $data['5'];
+                    $_SESSION["tipoUsuario"] = $data['7'];
 
                     header("Location: index.php");
                 } else {

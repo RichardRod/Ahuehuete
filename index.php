@@ -20,6 +20,22 @@ switch ($_GET['control']) {
 
         break;
 
+    case 'contacto':
+        require_once 'controller/ControladorContacto.php';
+        $control = new ControladorContacto();
+
+        break;
+
+    case 'nosotros':
+        require_once 'controller/ControladorNosotros.php';
+        $control = new ControladorNosotros();
+        break;
+
+    case 'galeria':
+        require_once 'controller/ControladorGaleria.php';
+        $control = new ControladorGaleria();
+        break;
+
     default:
 
         $header = null;
@@ -31,16 +47,35 @@ switch ($_GET['control']) {
             $content = file_get_contents('view/home/homepage.html');
             $footer = file_get_contents('view/footer/footer.html');
         } else {
-            $header = file_get_contents('view/header-loggedin.html');
-            $content = file_get_contents('view/index/content.html');
-            $footer = file_get_contents('view/footer.html');
 
-            $map = array(
-                '{username}' => $_SESSION['username'],
-            );
+            $header = null;
+            $content = null;
+            $footer = null;
+            if ($_SESSION['tipoUsuario'] == 3) { // Usuario Administrador
 
-            $header = strtr($header, $map);
-            echo $_SESSION['username'];
+                $header = file_get_contents('view/header/header-administrador.html');
+                $content = file_get_contents('view/home/homepage-administrador.html');
+                $footer = file_get_contents('view/footer/footer.html');
+
+            } else if ($_SESSION['tipoUsuario'] == 2) { // Usuario Privilegiado (Empleado)
+
+            } else if ($_SESSION['tipoUsuario'] == 1) { // Usuario Común (cliente)
+
+                $header = file_get_contents('view/header/header-cliente.html');
+                $content = file_get_contents('view/home/homepage-cliente.html');
+                $footer = file_get_contents('view/footer/footer.html');
+
+                $map = array(
+                    '{nombre}' => $_SESSION['nombre'],
+                );
+
+                $header = strtr($header, $map);
+                $content = strtr($content, $map);
+            }
+
+
+            echo $_SESSION['nombre'];
+            echo $_SESSION['tipoUsuario'];
         }
 
         echo $header . $content . $footer;

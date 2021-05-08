@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Administrar Opciones</title>
+
+    <style>
+
+        .contenedor-principal-admin {
+            padding-left: 5%;
+            padding-right: 5%;
+            display: -ms-flexbox; /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap; /* IE10 */
+            flex-wrap: wrap;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        /* Float four columns side by side */
+        .column {
+            float: left;
+            width: 33%;
+            padding: 0 10px;
+        }
+
+        /* Remove extra left and right margins, due to padding */
+        .row {margin: 0 -5px;}
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Responsive columns */
+        @media screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+                display: block;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Style the counter cards */
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            text-align: center;
+            background-color: #e1e5ea;
+            height: 230px;
+            max-height: 230px;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .boton-grande {
+            display: block;
+            width: 100%;
+            border: none;
+            background-color: #003366;
+            color: white;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .boton-grande:hover {
+            background-color: #336699;
+            color: white;
+        }
+
+        hr {
+            margin-bottom: 20px;
+        }
+
+        i {
+            margin-bottom: 20px;
+        }
+
+
+    </style>
+</head>
+
+
+<div class="contenedor-principal-admin">
+
+    <div class="side">
+        <h2>Panel de Administración</h2>
+
+        <p>Opciones.</p>
+
+    </div>
+
+    <div class="main">
+
+        <div class="float-container">
+
+            <h2>Opciones para Gestionar</h2>
+            <p>Selecciona la opción que desees gestionar</p>
+            <hr>
+
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <h3>Usuarios</h3>
+                        <i class="fas fa-users fa-3x"></i>
+                        <a href="index.php?control=session&action=login"><button class="boton-grande">Seleccionar</button></a>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <h3>Proveedores</h3>
+                        <i class="fas fa-truck-loading fa-3x"></i>
+                        <a href="index.php?control=session&action=login"><button class="boton-grande">Seleccionar</button></a>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <h3>Clientes</h3>
+                        <i class="fas fa-people-carry fa-3x"></i>
+                        <a href="index.php?control=session&action=login"><button class="boton-grande">Seleccionar</button></a>
+                    </div>
+                </div>
+
+
+                <div class="column">
+                    <div class="card">
+                        <h3>Pedidos de Clientes</h3>
+                        <i class="fas fa-truck-moving fa-3x"></i>
+                        <a href="index.php?control=session&action=login"><button class="boton-grande">Seleccionar</button></a>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <h3>Pedidos</h3>
+                        <i class="fas fa-archive fa-3x"></i>
+                        <a href="index.php?control=session&action=login"><button class="boton-grande">Seleccionar</button></a>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <h3>Inventario</h3>
+                        <i class="fas fa-book fa-3x"></i>
+                        <a href="index.php?control=session&action=login"><button class="boton-grande">Seleccionar</button></a>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <h3>Catalogo</h3>
+                        <i class="fas fa-briefcase fa-3x"></i>
+
+                        <a href="index.php?control=session&action=login"><button class="boton-grande">Seleccionar</button></a>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <h3>Ventas</h3>
+                        <i class="fab fa-sellsy fa-3x"></i>
+                        <a href="index.php?control=session&action=login"><button class="boton-grande">Seleccionar</button></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+</div>
+</html>
