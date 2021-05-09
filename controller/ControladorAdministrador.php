@@ -31,6 +31,10 @@ class ControladorAdministrador extends Controller
                 $this->menuInventario();
                 break;
 
+            case 'menu-catalogo-editar':
+                $this->menuEditarCatalogo();
+                break;
+
             case 'menu-catalogo':
                 $this->menuCatalogo();
                 break;
@@ -97,9 +101,78 @@ class ControladorAdministrador extends Controller
     private function menuCatalogo()
     {
 
+        require_once 'model/product.php';
+        $producto = new Product();
+
+        $productos = $producto->listProducts();
+
+        //var_dump($productos);
+
         $header = file_get_contents('view/header/header-administrador.html');
         $content = file_get_contents('view/administrador/catalogo/catalogo.html');
         $footer = file_get_contents('view/footer/footer.html');
+
+        if (!empty($productos)) { // Validar que existan productos
+
+            $startRow = strrpos($content, '<tr id="elemento-producto">');
+            $endRow = strrpos($content, '</tr>') ;
+
+            $item = substr($content, $startRow, $endRow - $startRow);
+
+            foreach ($productos as $row) {
+
+                $newRow = $item;
+
+                $dictionary = array(
+                    '{id}' => $row['ProductId'],
+                    '{nombre}' => $row['Name'],
+                    '{categoria}' => $row['Categoria'],
+                    '{descripcion}' => $row['Description'],
+                    '{costo}' => $row['Price'],
+                    '{stock}' => $row['Stock'],
+
+                );
+
+                $newRow = strtr($newRow, $dictionary);
+                $rows .= $newRow;
+
+            }
+
+            $content = str_replace($item, $rows, $content);
+
+        }
+
+
+
+        echo $header . $content;
+    }
+
+    private function menuEditarCatalogo()
+    {
+
+        $header = file_get_contents('view/header/header-administrador.html');
+        $content = file_get_contents('view/administrador/catalogo/formulario-editar.html');
+        $footer = file_get_contents('view/footer/footer.html');
+
+        require_once 'model/product.php';
+        $producto = new Product();
+
+        $productoEditar = $producto->obtener($_GET['producto']);
+
+            /*echo '---------';
+            var_dump($productoEditar);
+            echo '---------';*/
+
+        $map = array(
+            '{id}' => $_GET['producto'],
+            '{nombre}' => $productoEditar[0]['Name'],
+            '{categoria}' => $productoEditar[0]['Categoria'],
+            '{descripcion}' => $productoEditar[0]['Description'],
+            '{costo}' => $productoEditar[0]['Price'],
+            '{stock}' => $productoEditar[0]['Stock'],
+        );
+
+        $content = strtr($content, $map);
 
         echo $header . $content;
     }

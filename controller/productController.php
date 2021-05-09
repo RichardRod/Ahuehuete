@@ -17,6 +17,53 @@ class ProductController extends controller {
 
         switch ($_GET['action']) {
 
+            case 'insertar':
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    $nuevoProducto = new Product();
+
+                    $nuevoProducto->name = $_POST['txt-nombre'];
+                    $nuevoProducto->categoria = $_POST['txt-categoria'];
+                    $nuevoProducto->description = $_POST['txt-descripcion'];
+                    $nuevoProducto->price = $_POST['txt-costo'];
+                    $nuevoProducto->stock = $_POST['txt-stock'];
+
+
+                    $this->model->create($nuevoProducto);
+                }
+
+                header("Location: index.php?control=administrador&action=menu-catalogo");
+
+                break;
+
+            case 'eliminar':
+                $idEliminar = $_GET['producto'];
+
+                $this->model->eliminar($idEliminar);
+                header("Location: index.php?control=administrador&action=menu-catalogo");
+
+                break;
+
+            case 'editar':
+
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    $nuevoProducto = new Product();
+
+                    $nuevoProducto->productId = $_POST['txt-id'];
+                    $nuevoProducto->name = $_POST['txt-nombre'];
+                    $nuevoProducto->categoria = $_POST['txt-categoria'];
+                    $nuevoProducto->description = $_POST['txt-descripcion'];
+                    $nuevoProducto->price = $_POST['txt-costo'];
+                    $nuevoProducto->stock = $_POST['txt-stock'];
+
+
+                    $this->model->editar($nuevoProducto);
+                }
+
+                header("Location: index.php?control=administrador&action=menu-catalogo");
+
+                break;
+
+
             case 'list':
 
                 $header = file_get_contents('view/header/header.html');
@@ -36,7 +83,7 @@ class ProductController extends controller {
 
                     //echo count($products);
 
-                    $startRow = strrpos($content, '<div>');
+                    $startRow = strrpos($content, '<div id="product-grid">');
                     $endRow = strrpos($content, '</div>') ;
 
                     $item = substr($content, $startRow, $endRow - $startRow);
@@ -64,7 +111,7 @@ class ProductController extends controller {
 
 
 
-                echo $header . $contentAux;
+                echo $header . $content;
 
                 //header("Location: http://floval.mx/index.php");
                 break;

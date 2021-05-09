@@ -17,6 +17,16 @@ switch ($_GET['control']) {
         $control = new ControladorEmpleado();
         break;
 
+    case 'cliente':
+        require_once 'controller/ControladorCliente.php';
+        $control = new ControladorCliente();
+        break;
+
+    case 'carrito':
+        require_once 'controller/ControladorCarrito.php';
+        $control = new ControladorCarrito();
+        break;
+
     case 'products':
         require_once 'controller/productController.php';
         $control = new ProductController();

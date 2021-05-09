@@ -26,8 +26,7 @@ class User {
     {
         $password = password_hash($user->password, PASSWORD_DEFAULT);
 
-        $sqlQuery = "INSERT INTO 
-                    Ahuehuete.Usuario(NOMBRE, CORREO, TELEFONO, PASSWORD, FECHA_REGISTRO, TIPO_USUARIO) 
+        $sqlQuery = "INSERT INTO Usuario(NOMBRE, CORREO, TELEFONO, PASSWORD, FECHA_REGISTRO, TIPO_USUARIO) 
                     VALUES('$user->nombre', '$user->correo', '$user->telefono', '$password', CURRENT_TIMESTAMP, 1)";
 
 
@@ -45,7 +44,7 @@ class User {
         echo '------';
         var_dump($user->correo);
         echo '------';
-        $sql = "SELECT * FROM Ahuehuete.Usuario WHERE CORREO = '$user->correo'";
+        $sql = "SELECT * FROM Usuario WHERE CORREO = '$user->correo'";
 
         var_dump($sql);
 

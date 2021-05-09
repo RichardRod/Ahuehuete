@@ -28,6 +28,7 @@
       width: 100%;
       border: 1px solid #ddd;
       font-size: 18px;
+      margin-bottom: 20px;
     }
 
     #myTable th, #myTable td {
@@ -49,6 +50,17 @@
 
     /* Formulario */
     input[type=text], select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    input[type=number], select, textarea {
       width: 100%;
       padding: 12px;
       border: 1px solid #ccc;
@@ -93,25 +105,59 @@
       padding: 20px;
       margin-bottom: 20px;
     }
+
+
+    .btn-group button {
+      background-color: #04AA6D; /* Green background */
+      border: 1px solid green; /* Green border */
+      color: white; /* White text */
+      padding: 10px 24px; /* Some padding */
+      cursor: pointer; /* Pointer/hand icon */
+      float: left; /* Float the buttons side by side */
+    }
+
+    /* Clear floats (clearfix hack) */
+    .btn-group:after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .btn-group button:not(:last-child) {
+      border-right: none; /* Prevent double borders */
+    }
+
+    /* Add a background color on hover */
+    .btn-group button:hover {
+      background-color: #3e8e41;
+    }
+
+
   </style>
 </head>
 
-<h2>Catalogo</h2>
+<h2>Catálogo</h2>
 
 <div class="contenedor-tabla">
 
   <div class="contenedor-principal">
     <div class="formulario-contacto">
-      <form action="index.php?control=session&action=session-start" method="post">
+      <form action="index.php?control=products&action=insertar" method="post">
 
         <label for="txt-nombre">Nombre</label>
         <input type="text" id="txt-nombre" name="txt-nombre" placeholder="Nombre">
 
-        <label for="txt-correo">Correo Electronico</label>
-        <input type="text" id="txt-correo" name="txt-correo" placeholder="Correo">
+        <label for="txt-categoria">Categoría</label>
+        <input type="text" id="txt-categoria" name="txt-categoria" placeholder="Categoría">
 
-        <label for="txt-password">Contraseña</label>
-        <input type="text" id="txt-password" name="txt-password" placeholder="Contraseña">
+        <label for="txt-descripcion">Descripción</label>
+        <input type="text" id="txt-descripcion" name="txt-descripcion" placeholder="Descripción">
+
+        <label for="txt-costo">Costo</label>
+        <input type="text" id="txt-costo" name="txt-costo" placeholder="Costo">
+
+        <label for="txt-stock">Stock</label>
+        <input type="number" id="txt-stock" name="txt-stock" placeholder="stock">
 
         <input type="submit" value="Enviar">
       </form>
@@ -122,25 +168,26 @@
 
   <table id="myTable">
     <tr class="header">
-      <th style="width:20%;">Nombre</th>
-      <th style="width:20%;">Correo</th>
-      <th style="width:20%;">Teléfono</th>
-      <th style="width:20%;">RFC</th>
-      <th style="width:20%;">Fecha de Registro</th>
+      <th style="width:16.6%;">Nombre</th>
+      <th style="width:16.6%;">Categoría</th>
+      <th style="width:16.6%;">Descripción</th>
+      <th style="width:16.6%;">Costo</th>
+      <th style="width:16.6%;">Stock</th>
+      <th style="width:16.6%;">Acciones</th>
     </tr>
-    <tr>
-      <td>Sandra Puipui</td>
-      <td>Sandra@mail.com</td>
-      <td>12345</td>
-      <td>ABCDEF</td>
-      <td>20/05/2021</td>
-    </tr>
-    <tr>
-      <td>Squishy</td>
-      <td>squishy@mail.com</td>
-      <td>12345</td>
-      <td>ABCDEF</td>
-      <td>20/05/2021</td>
+    <tr id="elemento-producto">
+      <td>{nombre}</td>
+      <td>{categoria}</td>
+      <td>{descripcion}</td>
+      <td>{costo}</td>
+      <td>{stock}</td>
+      <td>
+        <div class="btn-group">
+          <a href="index.php?control=administrador&action=menu-catalogo-editar&producto={id}"><button>Editar</button></a>
+          <a href="index.php?control=products&action=eliminar&producto={id}"><button>Eliminar</button></a>
+        </div>
+
+      </td>
     </tr>
   </table>
 </div>

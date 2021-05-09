@@ -20,25 +20,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42bbe568-ac44-4d10-a62c-f853586ce532" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controller/ControladorAdministrador.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/ControladorEmpleado.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/ControladorPdf.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/administrador/catalogo/catalogo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/administrador/clientes/clientes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/administrador/inventario/inventario.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/administrador/pedidos/pedidos.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/administrador/proveedores/proveedores.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/administrador/usuarios/usuarios.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/administrador/ventas/ventas.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/cliente/compras.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/cliente/perfil.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/header/header-empleado.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/home/homepage-empleado.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/ControladorCarrito.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/ControladorCliente.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/perfil.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/administrador/catalogo/formulario-editar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configuration/env.php" beforeDir="false" afterPath="$PROJECT_DIR$/configuration/env.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/ControladorAdministrador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ControladorAdministrador.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/productController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/productController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/header/header-administrador.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/header/header-administrador.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/home/homepage-administrador.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/home/homepage-administrador.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/administrador/catalogo/catalogo.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/administrador/catalogo/catalogo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/administrador/clientes/clientes.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/administrador/clientes/clientes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/administrador/inventario/inventario.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/administrador/inventario/inventario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/administrador/pedidos/pedidos.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/administrador/pedidos/pedidos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/administrador/proveedores/proveedores.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/administrador/proveedores/proveedores.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/administrador/usuarios/usuarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/administrador/usuarios/usuarios.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/administrador/ventas/ventas.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/administrador/ventas/ventas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/cart/carrito.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/cart/carrito.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/cliente/perfil.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/cliente/perfil.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/header/header-cliente.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/header/header-cliente.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/productos/productos.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/productos/productos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/products/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/products/products.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +74,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -78,8 +82,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/view/css" />
       <recent name="$PROJECT_DIR$/images" />
+      <recent name="$PROJECT_DIR$/view/css" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/lib" />
     </key>
@@ -142,5 +146,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="215" key="NewPhpClassDialog" timestamp="1620595912993">
+      <screen x="0" y="23" width="1680" height="963" />
+    </state>
+    <state x="549" y="215" key="NewPhpClassDialog/0.23.1680.963@0.23.1680.963" timestamp="1620595912993" />
   </component>
 </project>
