@@ -19,7 +19,9 @@ class ControladorCarrito extends Controller
                 $nombre = $_GET['producto'];
                 $_SESSION["Producto"] = array('nombre' => $nombre);
 
-                header("Location: index.php");
+                //header("Location: index.php");
+                echo "<script type='text/javascript'> document.location = 'index.php'; </script>";
+
                 break;
 
 

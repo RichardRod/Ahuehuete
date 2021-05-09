@@ -31,7 +31,9 @@ class ProductController extends controller {
                     $this->model->create($nuevoProducto);
                 }
 
-                header("Location: index.php?control=administrador&action=menu-catalogo");
+                //header("Location: index.php?control=administrador&action=menu-catalogo");
+
+                echo "<script type='text/javascript'> document.location = 'index.php?control=administrador&action=menu-catalogo'; </script>";
 
                 break;
 
@@ -39,7 +41,10 @@ class ProductController extends controller {
                 $idEliminar = $_GET['producto'];
 
                 $this->model->eliminar($idEliminar);
-                header("Location: index.php?control=administrador&action=menu-catalogo");
+                //header("Location: index.php?control=administrador&action=menu-catalogo");
+                echo "<script type='text/javascript'> document.location = 'index.php?control=administrador&action=menu-catalogo'; </script>";
+
+
 
                 break;
 
@@ -59,8 +64,8 @@ class ProductController extends controller {
                     $this->model->editar($nuevoProducto);
                 }
 
-                header("Location: index.php?control=administrador&action=menu-catalogo");
-
+                //header("Location: index.php?control=administrador&action=menu-catalogo");
+                echo "<script type='text/javascript'> document.location = 'index.php?control=administrador&action=menu-catalogo'; </script>";
                 break;
 
 

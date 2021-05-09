@@ -28,7 +28,8 @@ class SessionController extends controller
 
             case 'register':
                 $this->signin();
-                header("Location: index.php");
+                //header("Location: index.php");
+                echo "<script type='text/javascript'> document.location = 'index.php'; </script>";
                 break;
 
             case 'login':
@@ -42,7 +43,8 @@ class SessionController extends controller
             case 'logout':
                 session_start();
                 session_destroy();
-                header("Location: index.php");
+                //header("Location: https://ahuehuete-shop.mx/index.php");
+                echo "<script type='text/javascript'> document.location = 'index.php'; </script>";
                 break;
         }
 
@@ -110,7 +112,9 @@ class SessionController extends controller
                     $_SESSION["rfc"] = $data['5'];
                     $_SESSION["tipoUsuario"] = $data['7'];
 
-                    header("Location: index.php");
+                    //header("Location: index.php");
+                    echo "<script type='text/javascript'> document.location = 'index.php'; </script>";
+
                 } else {
                     echo 'Password Not Match';
                 }
