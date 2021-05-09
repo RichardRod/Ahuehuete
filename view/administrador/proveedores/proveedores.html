@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .contenedor-tabla {
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+
+    #myInput {
+      background-image: url('/css/searchicon.png');
+      background-position: 10px 10px;
+      background-repeat: no-repeat;
+      width: 100%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
+    }
+
+    #myTable {
+      border-collapse: collapse;
+      width: 100%;
+      border: 1px solid #ddd;
+      font-size: 18px;
+    }
+
+    #myTable th, #myTable td {
+      text-align: left;
+      padding: 12px;
+    }
+
+    #myTable tr {
+      border-bottom: 1px solid #ddd;
+    }
+
+    #myTable tr.header, #myTable tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    /* Formulario */
+    input[type=text], select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    input[type=submit] {
+      background-color: #003366;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center;
+
+    }
+
+    input[type=submit]:hover {
+      background-color: #336699;
+    }
+
+    input {
+      font-size: 15px;
+    }
+
+    textarea {
+      font-size: 15px;
+    }
+
+    .contenedor-principal {
+      padding-right: 20%;
+      padding-left: 20%;
+    }
+
+    .formulario-contacto {
+      border-radius: 5px;
+      background-color: #dddddd;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<h2>Proveedores</h2>
+
+<div class="contenedor-tabla">
+
+  <div class="contenedor-principal">
+    <div class="formulario-contacto">
+      <form action="index.php?control=session&action=session-start" method="post">
+
+        <label for="txt-nombre">Nombre</label>
+        <input type="text" id="txt-nombre" name="txt-nombre" placeholder="Nombre">
+
+        <label for="txt-telefono">Teléfono</label>
+        <input type="text" id="txt-telefono" name="txt-telefono" placeholder="Teléfono">
+
+        <label for="txt-nombre-contacto">Nombre de Contacto</label>
+        <input type="text" id="txt-nombre-contacto" name="txt-nombre-contacto" placeholder="Nombre de Contacto">
+
+        <label for="txt-correo">Correo</label>
+        <input type="text" id="txt-correo" name="txt-correo" placeholder="Correo">
+
+        <label for="txt-cp">Código Postal</label>
+        <input type="text" id="txt-cp" name="txt-cp" placeholder="Código Postal">
+
+        <label for="txt-rfc">RFC</label>
+        <input type="text" id="txt-rfc" name="txt-rfc" placeholder="RFC">
+
+
+        <label>Dirección:</label>
+
+        <div style="display: flex">
+          <input type="text" id="txt-calle" name="txt-calle" placeholder="Calle">
+          <input type="text" id="txt-colonia" name="txt-colonia" placeholder="Colonia">
+          <input type="text" id="txt-municipio" name="txt-municipio" placeholder="Municipio">
+          <input type="text" id="txt-estado" name="txt-estado" placeholder="Estado">
+        </div>
+
+
+        <input type="submit" value="Enviar">
+      </form>
+    </div>
+  </div>
+
+  <input type="text" id="myInput" onkeyup="filtrar()" placeholder="Buscar" title="Type in a name">
+
+  <table id="myTable">
+    <tr class="header">
+      <th style="width:16.6%;">Nombre</th>
+      <th style="width:16.6%;">Teléfono</th>
+      <th style="width:16.6%;">Nombre de Contacto</th>
+      <th style="width:16.6%;">Correo</th>
+      <th style="width:16.6%;">Código Postal</th>
+      <th style="width:16.6%;">RFC</th>
+    </tr>
+    <tr>
+      <td>Sandra Puipui</td>
+      <td>Sandra@mail.com</td>
+      <td>12345</td>
+      <td>ABCDEF</td>
+      <td>20/05/2021</td>
+      <td>ABCDEF</td>
+    </tr>
+    <tr>
+      <td>Squishy</td>
+      <td>squishy@mail.com</td>
+      <td>12345</td>
+      <td>ABCDEF</td>
+      <td>20/05/2021</td>
+      <td>ABCDEF</td>
+    </tr>
+  </table>
+</div>
+
+
+<script>
+  function filtrar() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+</script>

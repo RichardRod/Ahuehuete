@@ -1,7 +1,7 @@
 <?php
 
 define('user','root');
-define('password','anitalavalatina');
+define('password','root');
 define('host','127.0.0.1');
-define('database','Ahuehuete');
+define('database','ahuehuete');
 define('port', 3306);

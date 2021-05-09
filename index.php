@@ -7,23 +7,29 @@ $control = null;
 var_dump($_GET);
 switch ($_GET['control']) {
 
+    case 'administrador':
+        require_once 'controller/ControladorAdministrador.php';
+        $control = new ControladorAdministrador();
+        break;
+
+    case 'empleado':
+        require_once 'controller/ControladorEmpleado.php';
+        $control = new ControladorEmpleado();
+        break;
+
     case 'products':
         require_once 'controller/productController.php';
         $control = new ProductController();
         break;
 
-
     case 'session':
-
         require_once 'controller/sessionController.php';
         $control = new SessionController();
-
         break;
 
     case 'contacto':
         require_once 'controller/ControladorContacto.php';
         $control = new ControladorContacto();
-
         break;
 
     case 'nosotros':
@@ -34,6 +40,11 @@ switch ($_GET['control']) {
     case 'galeria':
         require_once 'controller/ControladorGaleria.php';
         $control = new ControladorGaleria();
+        break;
+
+    case 'generarPdf':
+        require_once 'controller/ControladorPdf.php';
+        $control = new ControladorPdf();
         break;
 
     default:
@@ -58,6 +69,16 @@ switch ($_GET['control']) {
                 $footer = file_get_contents('view/footer/footer.html');
 
             } else if ($_SESSION['tipoUsuario'] == 2) { // Usuario Privilegiado (Empleado)
+
+                $header = file_get_contents('view/header/header-empleado.html');
+                $content = file_get_contents('view/home/homepage-empleado.html');
+                $footer = file_get_contents('view/footer/footer.html');
+
+                $map = array(
+                    '{nombre}' => $_SESSION['nombre'],
+                );
+
+                $header = strtr($header, $map);
 
             } else if ($_SESSION['tipoUsuario'] == 1) { // Usuario Común (cliente)
 
