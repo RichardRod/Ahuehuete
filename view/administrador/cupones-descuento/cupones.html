@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .contenedor-tabla {
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        #myInput {
+            background-image: url('/css/searchicon.png');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            width: 100%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+
+        #myTable {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        #myTable th, #myTable td {
+            text-align: left;
+            padding: 12px;
+        }
+
+        #myTable tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+        #myTable tr.header, #myTable tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        /* Formulario */
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=date], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=number], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: #000000;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+
+        }
+
+        input[type=submit]:hover {
+            background-color: #3d3d3d;
+        }
+
+        input {
+            font-size: 15px;
+        }
+
+        textarea {
+            font-size: 15px;
+        }
+
+        .contenedor-principal {
+            padding-right: 30%;
+            padding-left: 30%;
+        }
+
+        .formulario-contacto {
+            border-radius: 5px;
+            background-color: #dddddd;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+
+        .btn-group button {
+            background-color: #000000; /* Green background */
+            border: 1px solid white; /* Green border */
+            color: white; /* White text */
+            padding: 10px 24px; /* Some padding */
+            cursor: pointer; /* Pointer/hand icon */
+            float: left; /* Float the buttons side by side */
+        }
+
+        /* Clear floats (clearfix hack) */
+        .btn-group:after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .btn-group button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+
+        /* Add a background color on hover */
+        .btn-group button:hover {
+            background-color: #3d3d3d;
+        }
+
+        input:after {
+            color: white;
+        }
+
+    </style>
+</head>
+
+<h2>Cupones de Descuento</h2>
+
+<div class="contenedor-tabla">
+
+    <div class="contenedor-principal">
+        <div class="formulario-contacto">
+            <form action="index.php?control=cupon-descuento&action=agregar" method="post">
+
+                <label for="txt-codigo">Código</label>
+                <input type="text" id="txt-codigo" name="txt-codigo" placeholder="Código">
+
+
+                <label for="categoria">Categoría:</label>
+                <select name="categoria" id="categoria">
+                    <option value="volvo">Seleccionar Categoría</option>
+                    <option id="elemento" value="{elem}">{elem}</option>
+                </select>
+
+
+                <label for="vigencia">Fecha de Vigencia:</label>
+                <input type="date" id="vigencia" name="vigencia">
+
+                <label for="txt-descuento">Monto Descuento</label>
+                <input type="text" id="txt-descuento" name="txt-descuento" placeholder="Descuento %">
+
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+    </div>
+
+    <input type="text" id="myInput" onkeyup="filtrar()" placeholder="Buscar" title="Type in a name">
+
+    <table id="myTable">
+        <tr class="header">
+            <th style="width:20%;">Código</th>
+            <th style="width:20%;">Categoría</th>
+            <th style="width:20%;">Fecha de Vigencia</th>
+            <th style="width:20%;">Descuento</th>
+            <th style="width:20%;">Acciones</th>
+        </tr>
+        <tr id="elemento-descuento">
+            <td>{codigo}</td>
+            <td>{categoria}</td>
+            <td>{fechaVigencia}</td>
+            <td>{descuento}</td>
+            <td>
+                <div class="btn-group">
+                    <a href="index.php?control=administrador&action=menu-catalogo-editar&producto={id}"><button><i class="fas fa-edit"></i></button></a>
+                    <a href="index.php?control=products&action=eliminar&producto={id}"><button><i class="fas fa-trash"></i></button></a>
+                </div>
+
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+<script>
+    function filtrar() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>

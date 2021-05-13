@@ -43,6 +43,10 @@ class ControladorAdministrador extends Controller
                 $this->menuVentas();
                 break;
 
+            case 'cupones-descuento':
+                $this->menuCuponesDescuento();
+                break;
+
 
 
         }
@@ -183,6 +187,79 @@ class ControladorAdministrador extends Controller
         $header = file_get_contents('view/header/header-administrador.html');
         $content = file_get_contents('view/administrador/ventas/ventas.html');
         $footer = file_get_contents('view/footer/footer.html');
+
+        echo $header . $content;
+    }
+
+    private function menuCuponesDescuento() {
+
+        $header = file_get_contents('view/header/header-administrador.html');
+        $content = file_get_contents('view/administrador/cupones-descuento/cupones.html');
+        $footer = file_get_contents('view/footer/footer.html');
+
+        require_once 'model/Descuento.php';
+        $cuponDescuento = new Descuento();
+
+        require_once 'model/Categoria.php';
+        $categoria = new Categoria();
+
+        $cuponesDescuento = $cuponDescuento->listar();
+        $categorias = $categoria->listar();
+
+        if(!empty($categorias)) {
+            $startRow = strrpos($content, '<option id="elemento" value="{elem}">');
+            $endRow = strrpos($content, '</option>') ;
+
+            $item = substr($content, $startRow, $endRow - $startRow);
+
+            foreach ($categorias as $row)
+            {
+                $newRow = $item;
+
+                $dictionary = array(
+
+                    '{elem}' => $row['Categoria'],
+
+                );
+
+                $newRow = strtr($newRow, $dictionary);
+                $rows .= $newRow;
+            }
+
+            $content = str_replace($item, $rows, $content);
+            $rows = null; // Inicializar el acumulador
+        }
+
+        if(!empty($cuponesDescuento)) {
+
+            $startRow = strrpos($content, '<tr id="elemento-descuento">');
+            $endRow = strrpos($content, '</tr>') ;
+
+            $item = substr($content, $startRow, $endRow - $startRow);
+
+            foreach ($cuponesDescuento as $row) {
+
+                $newRow = $item;
+
+                $auxCategoria = $categoria->obtenerCategoriaString($row['idCategoria']);
+
+
+                $dictionary = array(
+
+                    '{codigo}' => $row['codigo'],
+                    '{categoria}' => $auxCategoria[0]['Categoria'],
+                    '{fechaVigencia}' => $row['FechaVigencia'],
+                    '{descuento}' => $row['MontoDescuento'],
+
+                );
+
+                $newRow = strtr($newRow, $dictionary);
+                $rows .= $newRow;
+
+            }
+
+            $content = str_replace($item, $rows, $content);
+        }
 
         echo $header . $content;
     }

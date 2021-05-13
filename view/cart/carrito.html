@@ -115,19 +115,22 @@
     <table id="myTable">
         <tr class="header">
             <th style="width:40%;">Producto</th>
-            <th style="width:30%;">Cantidad</th>
-            <th style="width:30%;"></th>
+            <th style="width:25%;">Cantidad</th>
+            <th style="width:25%;">Costo</th>
+            <th style="width:10%;"></th>
         </tr>
         <tr id="elemento-producto">
             <td><a href="index.php?control=products&action=single&producto={16}">{nombreProducto}</a></td>
             <td>
                 <input type="number" id="txt-cantidad" name="txt-cantidad" value="1">
             </td>
+            <td>$ {precio}</td>
             <td>
                 <div class="botones-accion">
-                    <a href="index.php?control=products&action=eliminar&producto={idProducto}"><button style="background-color: darkred"><i class="fas fa-trash"></i></button></a>
+                    <a href="index.php?control=carrito&action=eliminar&producto={idProducto}"><button style="background-color: darkred"><i class="fas fa-trash"></i></button></a>
                 </div>
             </td>
+
         </tr>
 
     </table>
@@ -137,10 +140,11 @@
         <h3>Código de promoción</h3>
         <input type="text" id="txt-promocion" name="txt-promocion" placeholder="Agrega código">
         <a href="#"><button style="width: 20%; margin-left: 40%" class="boton-grande">Aplicar</button></a>
+
     </div>
 
-    <h3 style="text-align: right; margin-top: 250px">Cantidad de Articulos: </h3>
-    <h3 style="text-align: right">Total: </h3>
+    <h3 style="text-align: right; margin-top: 250px">Cantidad de Articulos: {articulos}</h3>
+    <h3 style="text-align: right">Total: $ {total}</h3>
 
 
 

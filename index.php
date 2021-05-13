@@ -12,6 +12,11 @@ switch ($_GET['control']) {
         $control = new ControladorAdministrador();
         break;
 
+    case 'cupon-descuento':
+        require_once 'controller/ControladorCuponDescuento.php';
+        $control = new ControladorCuponDescuento();
+        break;
+
     case 'empleado':
         require_once 'controller/ControladorEmpleado.php';
         $control = new ControladorEmpleado();
@@ -107,8 +112,8 @@ switch ($_GET['control']) {
             }
 
 
-            echo $_SESSION['nombre'];
-            echo $_SESSION['tipoUsuario'];
+            /*echo $_SESSION['nombre'];
+            echo $_SESSION['tipoUsuario'];*/
         }
 
         echo $header . $content . $footer;

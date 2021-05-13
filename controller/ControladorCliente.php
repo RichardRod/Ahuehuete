@@ -7,6 +7,14 @@ require_once 'controller/controller.php';
 class ControladorCliente extends Controller
 {
 
+    private $modeloProducto;
+
+    public function __construct()
+    {
+        require_once 'model/product.php';
+        $this->modeloProducto = new Product();
+    }
+
     public function run()
     {
         switch ($_GET['action']) {
@@ -47,24 +55,40 @@ class ControladorCliente extends Controller
             var_dump($_SESSION['Producto']);
 
             $contador = 0;
+            $total = 0;
             foreach ($_SESSION['Producto'] as $row) {
 
-                var_dump($row);
-                echo 'Puipui: ' . ($contador);
+                $producto = null;
 
                 $newRow = $item;
 
 
                 if ($contador == 0) {
-                    $dictionary = array(
-                        '{nombreProducto}' => $row,
-                    );
-                } else {
-                    $dictionary = array(
-                        '{nombreProducto}' => $row['nombre'],
+                    $producto = $this->modeloProducto->obtener($row);
 
+                    $dictionary = array(
+                        '{nombreProducto}' => $producto[0]['Name'],
+                        '{idProducto}' => $producto[0]['ProductId'],
+                        '{precio}' => $producto[0]['Price'],
                     );
+
+                    $total = $total+  $producto[0]['Price'];
+
+                } else {
+                    $producto = $this->modeloProducto->obtener($row['id']);
+                    $dictionary = array(
+                        '{nombreProducto}' => $producto[0]['Name'],
+                        '{idProducto}' => $producto[0]['ProductId'],
+                        '{precio}' => $producto[0]['Price'],
+                    );
+
+                    $total = $total+  $producto[0]['Price'];
+
+
+
                 }
+
+
 
 
                 $newRow = strtr($newRow, $dictionary);
@@ -77,7 +101,9 @@ class ControladorCliente extends Controller
 
             $map = array(
                    '{nombre}' => $_SESSION['nombre'],
-                   '{totalItems}' => count($_SESSION['Producto'])
+                   '{totalItems}' => count($_SESSION['Producto']),
+                   '{total}' => $total,
+                   '{articulos}' => count($_SESSION['Producto']),
                );
 
                $header = strtr($header, $map);

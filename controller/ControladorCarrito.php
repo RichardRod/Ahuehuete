@@ -33,12 +33,10 @@ class ControladorCarrito extends Controller
                 if (count($_SESSION["Producto"]) > 0) { // Ya hay más de un arrticulo agrregado al carrito
                     array_push($_SESSION["Producto"],
                         array(
-                            'nombre' => $informacionProducto[0]["Name"],
                             'id' => $informacionProducto[0]["ProductId"],
                         ));
                 } else { // es primer articulo
                     $_SESSION["Producto"] = array(
-                        'nombre' => $informacionProducto[0]["Name"],
                         'id' => $informacionProducto[0]["ProductId"],
                     );
                 }
@@ -47,6 +45,30 @@ class ControladorCarrito extends Controller
                 //header("Location: index.php");
                 echo "<script type='text/javascript'> document.location = 'index.php?control=cliente&action=carrito'; </script>";
 
+                break;
+
+            case 'eliminar':
+
+                $idEliminar = $_GET['producto'];
+
+                if (($key = array_search($idEliminar, $_SESSION["Producto"]["id"])) !== false) {
+                    unset($_SESSION["Producto"][$key]);
+                }
+
+
+                var_dump($_SESSION["Producto"]);
+                echo 'Alto: ' . $idEliminar;
+                //unset($_SESSION["Producto"]['id'][$idEliminar]);
+
+                //echo "<script type='text/javascript'> document.location = 'index.php?control=cliente&action=carrito'; </script>";
+
+                break;
+
+            case 'aplicar-descuento':
+
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+                }
                 break;
 
 

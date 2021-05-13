@@ -72,21 +72,45 @@ class ProductController extends controller {
             case 'list':
 
                 $header = file_get_contents('view/header/header.html');
-                $contentAux = file_get_contents('view/productos/productos-todos.html');
                 $content = file_get_contents('view/productos/productos.html');
                 $footer = file_get_contents('view/footer/footer.html');
-                /*$header = file_get_contents('view/header.html');
-                $content = file_get_contents('view/products/all-products.html');
-                $footer = file_get_contents('view/footer.html');*/
+
 
                 $products = $this->model->listProducts();
 
-                //var_dump($products);
+                require_once 'model/Categoria.php';
+                $modeloCategoria = new Categoria();
+
+                $categorias = $modeloCategoria->listar();
+
+                if(!empty($categorias)) {
+
+                    $startRow = strrpos($content, '<button id="categoria-filtro"');
+                    $endRow = strrpos($content, '</button>') ;
+
+                    $item = substr($content, $startRow, $endRow - $startRow);
+
+                    foreach ($categorias as $row) {
+
+                        $newRow = $item;
+
+                        $dictionary = array(
+                            '{filtro}' => $row['Categoria'],
+
+                        );
+
+                        $newRow = strtr($newRow, $dictionary);
+                        $rows .= $newRow;
+
+                    }
+
+                    $content = str_replace($item, $rows, $content);
+                    $rows = null;
+                }
+
+
 
                 if (!empty($products)) {
-
-
-                    //echo count($products);
 
                     $startRow = strrpos($content, '<div id="product-grid">');
                     $endRow = strrpos($content, '</div>') ;
@@ -112,9 +136,6 @@ class ProductController extends controller {
                     $content = str_replace($item, $rows, $content);
 
                 }
-
-
-
 
                 echo $header . $content;
 

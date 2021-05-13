@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Administrar Opciones</title>
@@ -54,7 +53,7 @@
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             padding: 16px;
             text-align: center;
-            background-color: #e1e5ea;
+            background-color: #f0f0f0;
             height: 230px;
             max-height: 230px;
             margin-bottom: 20px;
@@ -65,7 +64,7 @@
             display: block;
             width: 100%;
             border: none;
-            background-color: #003366;
+            background-color: #000000;
             color: white;
             padding: 14px 28px;
             font-size: 16px;
@@ -78,7 +77,7 @@
         }
 
         .boton-grande:hover {
-            background-color: #336699;
+            background-color: #3d3d3d;
             color: white;
         }
 
@@ -107,14 +106,24 @@
             padding: 12px;
         }
 
+        ul li > a {
+            color: #000000;
+            font-size: 20px;
+        }
+
+        ul li > a:hover {
+            color: #3d3d3d;
+
+        }
+
 
     </style>
 </head>
 
 
-<div class="contenedor-principal-admin">
+<div style="margin-bottom: 0" class="contenedor-principal-admin">
 
-    <div class="side">
+    <div style="text-align: center" class="side">
         <h2>Panel de Administración</h2>
 
         <h3>Opciones:</h3>
@@ -122,6 +131,7 @@
         <ul>
             <li><a href="#">Facturación</a></li>
             <li><a href="#">Mensajes</a></li>
+            <li><a href="index.php?control=administrador&action=cupones-descuento">Cupones de Descuento</a></li>
         </ul>
 
     </div>
@@ -200,4 +210,3 @@
 
 
 </div>
-</html>
