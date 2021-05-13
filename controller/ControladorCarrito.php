@@ -7,6 +7,14 @@ require_once 'controller/controller.php';
 class ControladorCarrito extends Controller
 {
 
+    private $modeloProducto;
+
+    public function __construct() {
+        require_once 'model/product.php';
+        $this->modeloProducto = new Product();
+    }
+
+
     public function run()
     {
         switch ($_GET['action']) {
@@ -16,11 +24,15 @@ class ControladorCarrito extends Controller
 
             case 'agregar':
 
-                $nombre = $_GET['producto'];
-                $_SESSION["Producto"] = array('nombre' => $nombre);
+                $idProducto = $_GET['producto'];
+                $cantidad = $_GET['cantidad'];
+
+                $informacionProducto = $this->modeloProducto->obtener($idProducto);
+
+                $_SESSION["Producto"] = array('nombre' => $informacionProducto[0]["Name"]);
 
                 //header("Location: index.php");
-                echo "<script type='text/javascript'> document.location = 'index.php'; </script>";
+                echo "<script type='text/javascript'> document.location = 'index.php?control=cliente&action=carrito'; </script>";
 
                 break;
 

@@ -121,8 +121,24 @@ class ProductController extends controller {
                 //header("Location: http://floval.mx/index.php");
                 break;
 
-            case 'vianka':
-                echo 'Vamos!';
+            case 'single':
+
+                $header = file_get_contents('view/header/header.html');
+                $content = file_get_contents('view/productos/single-producto.html');
+                $footer = file_get_contents('view/footer/footer.html');
+
+                $producto = $this->model->obtener($_GET['producto']);
+
+                $diccionario = array(
+                    '{idProducto}' => $producto[0]['ProductId'],
+                    '{nombreProducto}' => $producto[0]['Name'],
+                    '{precioProducto}' => $producto[0]['Price'],
+                    '{descripcionProducto}' => $producto[0]['Description']
+                );
+
+                $content = strtr($content, $diccionario);
+
+                echo $header . $content . $footer;
                 break;
 
         }

@@ -40,32 +40,113 @@
         #myTable tr.header, #myTable tr:hover {
             background-color: #f1f1f1;
         }
+
+        .codigo-promocion {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 40%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            text-align: center;
+            border: #f2f2f2 1px solid;
+            right: 15%;
+            position: absolute;
+            padding-bottom: 20px;
+        }
+
+        input[type=text], select, textarea {
+            width: 50%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+            text-align: center;
+            font-size: 15px;
+
+        }
+
+        input[type=number], select, textarea {
+            width: 50%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+            text-align: center;
+
+        }
+
+        .botones-accion button {
+            background-color: #000000; /* Green background */
+            border: 1px solid white; /* Green border */
+            color: white; /* White text */
+            padding: 10px 24px; /* Some padding */
+            cursor: pointer; /* Pointer/hand icon */
+            float: left; /* Float the buttons side by side */
+        }
+
+        .botones-accion:after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .botones-accion button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+
+        /* Add a background color on hover */
+        .botones-accion button:hover {
+            background-color: #3d3d3d;
+        }
     </style>
 </head>
 
 
-<div style="padding-right: 5%; padding-left: 5%">
-    <h2 style="text-align: center">Mi Carrito</h2>
+<div style="padding-right: 15%; padding-left: 15%; margin-bottom: 200px;">
+    <h2 style="text-align: center">Mi Carrito de compras</h2>
 
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar articulo" title="Type in a name">
 
     <table id="myTable">
         <tr class="header">
-            <th style="width:60%;">Producto</th>
-            <th style="width:40%;">Cantidad</th>
+            <th style="width:40%;">Producto</th>
+            <th style="width:30%;">Cantidad</th>
+            <th style="width:30%;">Acciones</th>
         </tr>
         <tr id="elemento-producto">
-            <td>{nombre}</td>
-            <td>1</td>
+            <td><a href="index.php?control=products&action=single&producto={16}">{nombre}</a></td>
+            <td>
+                <input type="number" id="txt-cantidad" name="txt-cantidad" value="1">
+            </td>
+            <td>
+                <div class="botones-accion">
+                    <a href="index.php?control=administrador&action=menu-catalogo-editar&producto={id}"><button style="background-color: darkblue"><i class="fas fa-edit"></i></button></a>
+                    <a href="index.php?control=products&action=eliminar&producto={id}"><button style="background-color: darkred"><i class="fas fa-trash"></i></button></a>
+                </div>
+            </td>
         </tr>
 
     </table>
 
-    <h2 style="text-align: right">Total: </h2>
+
+    <div class="codigo-promocion">
+        <h3>Código de promoción</h3>
+        <input type="text" id="txt-promocion" name="txt-promocion" placeholder="Agrega código">
+        <a href="#"><button style="width: 20%; margin-left: 40%" class="boton-grande">Aplicar</button></a>
+    </div>
+
+    <h3 style="text-align: right; margin-top: 250px">Cantidad de Articulos: </h3>
+    <h3 style="text-align: right">Total: </h3>
 
 
 
-    <a href="index.php?control=carrito&action=checkout"><button class="boton-grande">Comprar</button></a>
+    <a href="index.php?control=carrito&action=checkout"><button style="width: 20%; right: 15%;  position: absolute" class="boton-grande">Continuar</button></a>
+    <a href="index.php?control=carrito&action=checkout"><button style="width: 20%; margin-top: 60px; right: 15%;  position: absolute" class="boton-grande">Seguir Comprando</button></a>
 
 </div>
 

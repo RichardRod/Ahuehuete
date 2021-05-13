@@ -7,28 +7,20 @@
 
 
     <style>
-        body {
-            font-family: Arial;
-            font-size: 20px;
-            padding: 8px;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
 
         input {
             font-size: 15px;
         }
 
         .contenedor-compra {
+            margin-top: 20px;
+            max-width: 100%;
             display: -ms-flexbox; /* IE10 */
             display: flex;
             -ms-flex-wrap: wrap; /* IE10 */
             flex-wrap: wrap;
-            margin: 0 -16px;
-            padding-left: 5%;
-            padding-right: 5%;
+            padding-left: 10%;
+            padding-right: 10%;
         }
 
         .col-25 {
@@ -53,7 +45,7 @@
         }
 
         .container {
-            background-color: #ebd5bd;
+            background-color: #f0f0f0;
             padding: 5px 20px 15px 20px;
             border: 1px solid lightgrey;
             border-radius: 3px;
@@ -79,7 +71,7 @@
         }
 
         .btn {
-            background-color: #003366;
+            background-color: #000000;
             color: white;
             padding: 12px;
             margin: 10px 0;
@@ -91,11 +83,11 @@
         }
 
         .btn:hover {
-            background-color: #336699;
+            background-color: #3d3d3d;
         }
 
         a {
-            color: #2196F3;
+            color: #000000;
         }
 
         hr {
@@ -166,7 +158,7 @@
 
                         <div class="contenedor-compra">
                             <div class="col-50">
-                                <label for="expyear">Año de Expiración</label>
+                                <label for="expyear">Año de Exp.</label>
                                 <input type="text" id="expyear" name="expyear" placeholder="2018">
                             </div>
                             <div class="col-50">
@@ -180,7 +172,7 @@
                 <label>
                     <input type="checkbox" checked="checked" name="sameadr"> Misma direccción de envio a la de facturación
                 </label>
-                <input type="submit" value="Continuar con la compra" class="btn">
+                <input type="submit" value="Comprar" class="btn">
             </form>
         </div>
     </div>

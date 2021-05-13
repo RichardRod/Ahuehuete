@@ -7,7 +7,7 @@
 
 
         .product-item {
-            max-width: 200px;
+            max-width: 300px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             text-align: center;
             float: left;
@@ -48,17 +48,25 @@
         }
 
         .btn:hover {
-            background-color: #ddd;
+            background-color: #3d3d3d;
+            color: white;
         }
 
         .btn.active {
-            background-color: #666;
+            background-color: #000000;
+            color: white;
+        }
+
+        .btn.active:hover {
+            background-color: #3d3d3d;
             color: white;
         }
 
         .todas-categorias {
-            max-width: 1300px;
-            margin: auto;
+            max-width: 100%;
+            padding-left: 10%;
+            padding-right: 10%;
+
         }
 
         h1 {
@@ -66,12 +74,38 @@
             word-break: break-all;
         }
 
+        h2 {
+            text-align: center;
+        }
+
+        #myBtnContainer {
+            text-align: center;
+
+        }
+
+        #myBtnContainer button {
+            font-size: large;
+        }
+
+        .add-cart {
+            float: right;
+            margin-right: 6px;
+            margin-top: -20px;
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+
+
     </style>
 </head>
 
+<h2>Nuestras Categorias <i class="fas fa-bookmark"></i></h2>
+<hr>
+
 <div class="todas-categorias">
-    <h2>Nuestras Categorias</h2>
-    <hr>
+
 
     <div id="myBtnContainer">
         <button class="btn active" onclick="filterSelection('all')">Todas las categorias</button>
@@ -83,18 +117,20 @@
         <div id="product-grid">
             <div class="product-item">
                 <form method="post" action="index.php?control=carrito&action=agregar&producto={productName}">
-                    <img src="./images/planta_a.jpeg" alt="Planta" style="width:100%">
+                    <a href="index.php?control=products&action=single&producto={productId}"><img src="./images/planta_a.jpeg" alt="Planta" style="width:100%"></a>
                     <h2>{productName}</h2>
                     <h2>{productDescription}</h2>
                     <p class="precio">$ {productPrice}</p>
                     <div class="cart-action">
-                        <input type="submit" value="Agregar al Carrito" class="boton-agregar"/>
+                        <input type="submit" value="Agregar " class="boton-agregar"/>
+                        <span class="fas fa-cart-plus add-cart"></span>
                     </div>
                 </form>
             </div>
         </div>
 
 </div>
+
 
 <script>
     filterSelection("all")

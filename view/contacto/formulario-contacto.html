@@ -5,6 +5,11 @@
 
     <style>
 
+        label {
+            display: block;
+            text-align: center;
+        }
+
         input[type=text], select, textarea {
             width: 100%;
             padding: 12px;
@@ -17,36 +22,46 @@
         }
 
         input[type=submit] {
-            background-color: #003366;
+            background-color: #000000;
             color: white;
             padding: 12px 20px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
 
+
         }
 
         input[type=submit]:hover {
-            background-color: #336699;
+            background-color: #3d3d3d;
+            text-align: center;
         }
 
         input {
             font-size: 15px;
+            text-align: center;
         }
 
         textarea {
             font-size: 15px;
+            text-align: center;
         }
 
         .contenedor-principal {
-            padding-right: 5%;
-            padding-left: 5%;
+            padding-right: 15%;
+            padding-left: 15%;
         }
 
         .formulario-contacto {
             border-radius: 5px;
-            background-color: #ebd5bd;
+            background-color: #f0f0f0;
             padding: 20px;
+        }
+
+        h3 {
+            text-align: center;
+            padding-bottom: 2%;
+            padding-top: 2%;
         }
     </style>
 </head>
@@ -57,15 +72,18 @@
     <div class="formulario-contacto">
         <form action="/action_page.php">
             <label for="fname">Nombre Completo</label>
-            <input type="text" id="fname" name="firstname" placeholder="Nombre..">
+            <input type="text" id="fname" name="firstname" placeholder="Nombre.." required>
 
             <label for="lname">Usuario</label>
-            <input type="text" id="lname" name="lastname" placeholder="Usuario..">
+            <input type="text" id="lname" name="lastname" placeholder="Usuario.." required>
 
             <label for="subject">Comentarios</label>
-            <textarea id="subject" name="subject" placeholder="Escribenos tus comentarios.." style="height:200px"></textarea>
+            <textarea id="subject" name="subject" placeholder="Escribenos tus comentarios.." style="height:200px" required></textarea>
 
-            <input type="submit" value="Enviar">
+            <div style="text-align: center">
+                <input type="submit" value="Enviar">
+            </div>
+
         </form>
     </div>
 </div>

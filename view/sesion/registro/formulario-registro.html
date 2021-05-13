@@ -5,6 +5,11 @@
 
     <style>
 
+        label {
+            display: block;
+            text-align: center;
+        }
+
         input[type=text], select, textarea {
             width: 100%;
             padding: 12px;
@@ -14,6 +19,7 @@
             margin-top: 6px;
             margin-bottom: 16px;
             resize: vertical;
+            text-align: center;
         }
 
         input[type=password], select, textarea {
@@ -25,11 +31,12 @@
             margin-top: 6px;
             margin-bottom: 16px;
             resize: vertical;
+            text-align: center;
         }
 
 
         input[type=submit] {
-            background-color: #003366;
+            background-color: #000000;
             color: white;
             padding: 12px 20px;
             border: none;
@@ -39,7 +46,7 @@
         }
 
         input[type=submit]:hover {
-            background-color: #336699;
+            background-color: #3d3d3d;
         }
 
         input {
@@ -57,8 +64,14 @@
 
         .formulario-contacto {
             border-radius: 5px;
-            background-color: #ebd5bd;
+            background-color: #f0f0f0;
             padding: 20px;
+        }
+
+        h3 {
+            text-align: center;
+            padding-bottom: 2%;
+            padding-top: 2%;
         }
     </style>
 </head>
@@ -69,22 +82,25 @@
     <div class="formulario-contacto">
         <form action="index.php?control=session&action=register" method="post">
             <label for="txt-nombre">Nombre Completo</label>
-            <input type="text" id="txt-nombre" name="txt-nombre" placeholder="Nombre con apellidos">
+            <input type="text" id="txt-nombre" name="txt-nombre" placeholder="Nombre con apellidos" required>
 
             <label for="txt-correo">Correo Electronico</label>
-            <input type="text" id="txt-correo" name="txt-correo" placeholder="Correo Electronico">
+            <input type="text" id="txt-correo" name="txt-correo" placeholder="Correo Electronico" required>
 
             <label for="txt-telefono">Teléfono</label>
-            <input type="text" id="txt-telefono" name="txt-telefono" placeholder="Teléfono">
+            <input type="text" id="txt-telefono" name="txt-telefono" placeholder="Teléfono" required>
 
             <label for="txt-password">Crea tu Contraseña</label>
-            <input type="password" id="txt-password" name="txt-password" placeholder="Contraseña">
+            <input type="password" id="txt-password" name="txt-password" placeholder="Contraseña" required>
 
             <label for="txt-password-confirmacion">Confirma tu Contraseña</label>
-            <input type="password" id="txt-password-confirmacion" name="txt-password-confirmacion" placeholder="Repite tu contraseña">
+            <input type="password" id="txt-password-confirmacion" name="txt-password-confirmacion" placeholder="Repite tu contraseña" required>
 
 
-            <input type="submit" value="Enviar">
+            <div style="text-align: center">
+                <input type="submit" value="Enviar">
+            </div>
+
         </form>
     </div>
 </div>

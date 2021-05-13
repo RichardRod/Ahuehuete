@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        .center-screen {
+            padding: 100px;
+        }
+
+        /* Create two equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            height: 300px; /* Should be removed. Only for demonstration */
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+
+        .imagen {
+
+
+        }
+
+
+        .imagen-contenedor {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .info-producto {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            text-align: center;
+            border: #f2f2f2 1px solid;
+        }
+
+        .precio {
+            color: grey;
+            font-size: 22px;
+        }
+
+        input[type=number], select, textarea {
+            width: 50%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<h2>Descripción del Producto</h2>
+
+<div class="center-screen">
+    <div class="row">
+        <div class="column imagen">
+            <img class="imagen-contenedor" src="./images/img_user_session.png" alt="" />
+
+        </div>
+        <div class="column" >
+            <div class="info-producto">
+                <h2>{nombreProducto}</h2>
+                <p>{descripcionProducto}</p>
+                <p class="precio">$ {precioProducto}</p>
+
+                <label for="txt-cantidad">Cantidad:</label>
+                <input type="number" id="txt-cantidad" value="1" name="txt-cantidad" placeholder="Cantidad">
+
+                <a href="index.php?control=carrito&action=agregar&producto={idProducto}"><button style="bottom: 0; right: 0" class="boton-grande">Agregar al Carrito</button></a>
+            </div>
+
+        </div>
+    </div>
+</div>
