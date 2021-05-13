@@ -9,7 +9,8 @@ class ControladorCarrito extends Controller
 
     private $modeloProducto;
 
-    public function __construct() {
+    public function __construct()
+    {
         require_once 'model/product.php';
         $this->modeloProducto = new Product();
     }
@@ -29,7 +30,19 @@ class ControladorCarrito extends Controller
 
                 $informacionProducto = $this->modeloProducto->obtener($idProducto);
 
-                $_SESSION["Producto"] = array('nombre' => $informacionProducto[0]["Name"]);
+                if (count($_SESSION["Producto"]) > 0) { // Ya hay más de un arrticulo agrregado al carrito
+                    array_push($_SESSION["Producto"],
+                        array(
+                            'nombre' => $informacionProducto[0]["Name"],
+                            'id' => $informacionProducto[0]["ProductId"],
+                        ));
+                } else { // es primer articulo
+                    $_SESSION["Producto"] = array(
+                        'nombre' => $informacionProducto[0]["Name"],
+                        'id' => $informacionProducto[0]["ProductId"],
+                    );
+                }
+                //$_SESSION["Producto"] = array('nombre' => $informacionProducto[0]["Name"]);
 
                 //header("Location: index.php");
                 echo "<script type='text/javascript'> document.location = 'index.php?control=cliente&action=carrito'; </script>";

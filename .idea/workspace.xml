@@ -20,23 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42bbe568-ac44-4d10-a62c-f853586ce532" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/view/productos/single-producto.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configuration/env.php" beforeDir="false" afterPath="$PROJECT_DIR$/configuration/env.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/ControladorCarrito.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ControladorCarrito.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/productController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/productController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/ControladorCliente.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ControladorCliente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/sessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/sessionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/cart/carrito.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/cart/carrito.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/cart/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/cart/checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/contacto/formulario-contacto.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/contacto/formulario-contacto.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/footer/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/footer/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/header/header-cliente.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/header/header-cliente.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/header/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/header/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/home/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/home/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/nosotros/nosotros.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/nosotros/nosotros.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/productos/productos.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/productos/productos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/sesion/iniciar-sesion/formulario-iniciar-sesion.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/sesion/iniciar-sesion/formulario-iniciar-sesion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/sesion/registro/formulario-registro.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/sesion/registro/formulario-registro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/productos/single-producto.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/productos/single-producto.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +114,7 @@
       <workItem from="1620502644599" duration="68000" />
       <workItem from="1620503083603" duration="12865000" />
       <workItem from="1620519943203" duration="4202000" />
-      <workItem from="1620852025695" duration="10813000" />
+      <workItem from="1620852025695" duration="15604000" />
     </task>
     <servers />
   </component>

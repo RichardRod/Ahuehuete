@@ -116,17 +116,16 @@
         <tr class="header">
             <th style="width:40%;">Producto</th>
             <th style="width:30%;">Cantidad</th>
-            <th style="width:30%;">Acciones</th>
+            <th style="width:30%;"></th>
         </tr>
         <tr id="elemento-producto">
-            <td><a href="index.php?control=products&action=single&producto={16}">{nombre}</a></td>
+            <td><a href="index.php?control=products&action=single&producto={16}">{nombreProducto}</a></td>
             <td>
                 <input type="number" id="txt-cantidad" name="txt-cantidad" value="1">
             </td>
             <td>
                 <div class="botones-accion">
-                    <a href="index.php?control=administrador&action=menu-catalogo-editar&producto={id}"><button style="background-color: darkblue"><i class="fas fa-edit"></i></button></a>
-                    <a href="index.php?control=products&action=eliminar&producto={id}"><button style="background-color: darkred"><i class="fas fa-trash"></i></button></a>
+                    <a href="index.php?control=products&action=eliminar&producto={idProducto}"><button style="background-color: darkred"><i class="fas fa-trash"></i></button></a>
                 </div>
             </td>
         </tr>

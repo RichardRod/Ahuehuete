@@ -1,10 +1,10 @@
 <?php
 
-//error_reporting(0);
+error_reporting(0);
 session_start();
 $control = null;
 
-var_dump($_GET);
+//var_dump($_GET);
 switch ($_GET['control']) {
 
     case 'administrador':
@@ -98,6 +98,8 @@ switch ($_GET['control']) {
 
                 $map = array(
                     '{nombre}' => $_SESSION['nombre'],
+                     '{totalItems}' => count($_SESSION['Producto'])
+
                 );
 
                 $header = strtr($header, $map);

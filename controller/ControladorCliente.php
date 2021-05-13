@@ -44,24 +44,47 @@ class ControladorCliente extends Controller
 
             $item = substr($content, $startRow, $endRow - $startRow);
 
-            //var_dump($_SESSION['Producto']);
+            var_dump($_SESSION['Producto']);
+
+            $contador = 0;
             foreach ($_SESSION['Producto'] as $row) {
+
+                var_dump($row);
+                echo 'Puipui: ' . ($contador);
 
                 $newRow = $item;
 
-                $dictionary = array(
 
-                    '{nombre}' => $_SESSION['Producto']['nombre'],
+                if ($contador == 0) {
+                    $dictionary = array(
+                        '{nombreProducto}' => $row,
+                    );
+                } else {
+                    $dictionary = array(
+                        '{nombreProducto}' => $row['nombre'],
 
+                    );
+                }
 
-                );
 
                 $newRow = strtr($newRow, $dictionary);
                 $rows .= $newRow;
+                $contador++;
             }
+
 
             $content = str_replace($item, $rows, $content);
 
+            $map = array(
+                   '{nombre}' => $_SESSION['nombre'],
+                   '{totalItems}' => count($_SESSION['Producto'])
+               );
+
+               $header = strtr($header, $map);
+               $content = strtr($content, $map);
+
+        } else {
+            echo 'No tiene nada';
         }
 
         echo $header . $content . $footer;

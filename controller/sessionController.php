@@ -17,9 +17,6 @@ class SessionController extends controller
 
     public function run()
     {
-
-        echo 'Execute SessionController';
-
         switch ($_GET['action']) {
 
             case 'registrarse':
