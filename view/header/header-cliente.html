@@ -61,7 +61,6 @@
         .navbar {
             overflow: hidden;
             background-color: #fafaf8;
-            position: sticky;
             position: -webkit-sticky;
             top: 0;
             font-size: 20px;
@@ -166,6 +165,55 @@
             background-color: #3d3d3d;
             color: white;
         }
+
+        /* Dropdown */
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 20px;
+            border: none;
+            outline: none;
+            color: #000000;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3d3d3d;
+            color: white;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #3d3d3d;
+            color: white;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
     </style>
 </head>
 
@@ -179,10 +227,19 @@
     <a href="index.php?control=contacto&action=formulario"><i class="fas fa-file-signature"></i> Contacto</a>
 
 
-    <a href="index.php?control=cliente&action=perfil" class="right">Hola, {nombre}</a>
+    <div style="float: right" class="dropdown">
+        <button class="dropbtn">Hola, {nombre}
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="index.php?control=cliente&action=perfil"><i class="fa fa-user"></i> Mi Pérfil</a>
+            <a href="#"><i class="fa fa-money-bill"></i> Compras</a>
+            <a href="index.php?control=session&action=logout">Cerrar Sesión</a>
+        </div>
+    </div>
     <a href="index.php?control=cliente&action=carrito" class="right"><i class="fas fa-shopping-cart"></i> Mi Carrito ({totalItems})</a>
     <a href="#" class="right"><i class="fas fa-heart"></i> Lista de Deseos</a>
-    <a href="index.php?control=session&action=logout" class="right">Cerrar Sesión</a>
+
 </div>
 
 
