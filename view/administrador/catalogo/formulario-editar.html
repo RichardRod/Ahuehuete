@@ -28,7 +28,7 @@
         }
 
         input[type=submit] {
-            background-color: #003366;
+            background-color: #000000;
             color: white;
             padding: 12px 20px;
             border: none;
@@ -38,7 +38,7 @@
         }
 
         input[type=submit]:hover {
-            background-color: #336699;
+            background-color: #3d3d3d;
         }
 
         input {
@@ -57,43 +57,64 @@
         .formulario-contacto {
 
             border-radius: 5px;
-            background-color: #ebd5bd;
+            background-color: #dddddd;
             padding: 20px;
+            
         }
 
         h2 {
             text-align: center;
         }
+
+        .imagen-producto-editar img {
+            height: 500px;
+            width: 500px;
+            margin: 20px;
+            border-radius: 5px;
+            border: black;
+            border-style: solid;
+        }
+
+        input[type="file"] {
+            width: 100%;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 
-<div class="contenedor-principal">
-
 <h2>Editar Producto</h2>
 
-<div class="formulario-contacto">
-    <form action="index.php?control=products&action=editar" method="post">
+<div style="display: flex; padding-left: 200px; padding-right: 200px" class="contenedor-principal">
 
-        <label for="txt-id">Nombre</label>
-        <input type="text" id="txt-id" name="txt-id" placeholder="ID" value="{id}" hidden>
+    <div  class="formulario-contacto">
+        <form action="index.php?control=products&action=editar" method="post" enctype="multipart/form-data">
 
-        <label for="txt-nombre">Nombre</label>
-        <input type="text" id="txt-nombre" name="txt-nombre" placeholder="Nombre" value="{nombre}">
+            <label for="txt-id">Nombre</label>
+            <input type="text" id="txt-id" name="txt-id" placeholder="ID" value="{id}" hidden>
 
-        <label for="txt-categoria">Categoría</label>
-        <input type="text" id="txt-categoria" name="txt-categoria" placeholder="Categoría" value="{categoria}">
+            <label for="txt-nombre">Nombre</label>
+            <input type="text" id="txt-nombre" name="txt-nombre" placeholder="Nombre" value="{nombre}">
 
-        <label for="txt-descripcion">Descripción</label>
-        <input type="text" id="txt-descripcion" name="txt-descripcion" placeholder="Descripción" value="{descripcion}"}>
+            <label for="txt-categoria">Categoría</label>
+            <input type="text" id="txt-categoria" name="txt-categoria" placeholder="Categoría" value="{categoria}">
 
-        <label for="txt-costo">Costo</label>
-        <input type="text" id="txt-costo" name="txt-costo" placeholder="Costo" value="{costo}">
+            <label for="txt-descripcion">Descripción</label>
+            <input type="text" id="txt-descripcion" name="txt-descripcion" placeholder="Descripción" value="{descripcion}"}>
 
-        <label for="txt-stock">Stock</label>
-        <input type="number" id="txt-stock" name="txt-stock" placeholder="stock" value="{stock}">
+            <label for="txt-costo">Costo</label>
+            <input type="text" id="txt-costo" name="txt-costo" placeholder="Costo" value="{costo}">
 
-        <input type="submit" value="Actualizar">
-    </form>
-</div>
+            <label for="txt-stock">Stock</label>
+            <input type="number" id="txt-stock" name="txt-stock" placeholder="stock" value="{stock}">
+
+            <input type="file" name="subir-archivo" id="subir-archivo">
+
+            <input type="submit" value="Actualizar">
+        </form>
+    </div>
+
+    <div class="imagen-producto-editar">
+        <img src="{imagenProducto}" alt="">
+    </div>
 
 </div>

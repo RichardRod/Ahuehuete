@@ -174,6 +174,7 @@ class ControladorAdministrador extends Controller
             '{descripcion}' => $productoEditar[0]['Description'],
             '{costo}' => $productoEditar[0]['Price'],
             '{stock}' => $productoEditar[0]['Stock'],
+            '{imagenProducto}' => $productoEditar[0]['RUTA_IMAGEN'],
         );
 
         $content = strtr($content, $map);

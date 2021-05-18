@@ -20,8 +20,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42bbe568-ac44-4d10-a62c-f853586ce532" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/model/Pedido.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/php.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/header/header-cliente.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/header/header-cliente.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/ControladorAdministrador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ControladorAdministrador.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/ControladorCarrito.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ControladorCarrito.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/ControladorCliente.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ControladorCliente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/productController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/productController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/administrador/catalogo/catalogo.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/administrador/catalogo/catalogo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/administrador/catalogo/formulario-editar.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/administrador/catalogo/formulario-editar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/cart/carrito.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/cart/carrito.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/cart/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/cart/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/productos/productos.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/productos/productos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/productos/single-producto.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/productos/single-producto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/~$uehuete doc.docx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,18 +73,18 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/images" />
-      <recent name="$PROJECT_DIR$/view/css" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/lib" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/view" />
       <recent name="$PROJECT_DIR$/images" />
       <recent name="$PROJECT_DIR$/lib" />
       <recent name="$PROJECT_DIR$/view/users/signin" />
       <recent name="$PROJECT_DIR$/view/users/login" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
+      <recent name="$PROJECT_DIR$/view/css" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/lib" />
     </key>
   </component>
   <component name="RunManager">
@@ -108,7 +121,8 @@
       <workItem from="1620502644599" duration="68000" />
       <workItem from="1620503083603" duration="12865000" />
       <workItem from="1620519943203" duration="4202000" />
-      <workItem from="1620852025695" duration="30618000" />
+      <workItem from="1620852025695" duration="36158000" />
+      <workItem from="1621275845700" duration="11870000" />
     </task>
     <servers />
   </component>
@@ -128,10 +142,16 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="215" key="NewPhpClassDialog" timestamp="1620937470908">
-      <screen x="0" y="23" width="1680" height="965" />
+    <state x="549" y="214" key="NewPhpClassDialog" timestamp="1621295309426">
+      <screen x="0" y="23" width="1680" height="962" />
     </state>
+    <state x="549" y="214" key="NewPhpClassDialog/0.23.1680.962@0.23.1680.962" timestamp="1621295309426" />
     <state x="549" y="215" key="NewPhpClassDialog/0.23.1680.963@0.23.1680.963" timestamp="1620919715087" />
     <state x="549" y="215" key="NewPhpClassDialog/0.23.1680.965@0.23.1680.965" timestamp="1620937470908" />
+    <state x="570" y="382" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1621277795187">
+      <screen x="0" y="23" width="1680" height="962" />
+    </state>
+    <state x="570" y="382" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.23.1680.962@0.23.1680.962" timestamp="1621277795187" />
+    <state x="570" y="382" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.23.1680.963@0.23.1680.963" timestamp="1621123967008" />
   </component>
 </project>

@@ -4,20 +4,73 @@ session_start();
 
 require_once 'controller/controller.php';
 
-class ProductController extends controller {
+class ProductController extends controller
+{
 
     private $model;
 
-    public function __construct() {
+    public function __construct()
+    {
         require_once 'model/product.php';
         $this->model = new Product();
     }
 
-    public function run() {
+    public function run()
+    {
 
         switch ($_GET['action']) {
 
             case 'insertar':
+                $directorio_imagenes = "imagenes_subidas/";
+                $ruta_imagen = $directorio_imagenes . basename($_FILES["subir-archivo"]["name"]);
+                $exito = 1;
+
+                $tipoImagen = strtolower(pathinfo($ruta_imagen, PATHINFO_EXTENSION));
+
+                // Validar imagen
+                if (isset($_POST["submit"])) {
+                    $validar = getimagesize($_FILES["subir-archivo"]["tmp_name"]);
+                    if ($validar !== false) {
+                        echo "Imagen - " . $validar["mime"] . ".";
+                        $exito = 1;
+                    } else {
+                        echo "El Archivo no es una imagen.";
+                        $exito = 0;
+                    }
+                }
+
+                // Validar si ya existe la imagen
+                if (file_exists($ruta_imagen)) {
+                    //echo "El Archivo ya existe.";
+                    $exito = 0;
+                }
+
+                // Validar tamaño
+                if ($_FILES["subir-archivo"]["size"] > 500000) {
+                    echo "Imagen es demasiado grande.";
+                    $exito = 0;
+                }
+
+                // Validar formato
+                if($tipoImagen != "jpg" && $tipoImagen != "png" && $tipoImagen != "jpeg"
+                    && $tipoImagen != "gif" ) {
+                    echo "Formatos Permitidos: JPG, JPEG, PNG & GIF files.";
+                    $exito = 0;
+                }
+
+                // Validar si hubo error al subir archivo
+                if ($exito == 0) {
+                    echo "Hubo un error al subir imagen A.";
+                } else {
+                    if (move_uploaded_file($_FILES["subir-archivo"]["tmp_name"], $ruta_imagen)) {
+                        //echo "La imagen ". htmlspecialchars( basename( $_FILES["subir-archivo"]["name"])). " se ha subido con exito.";
+                    } else {
+                        echo "Hubo un error al subir imagen B." . $_FILES["subir-archivo"]["tmp_name"];
+                    }
+                }
+
+
+
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $nuevoProducto = new Product();
 
@@ -26,7 +79,7 @@ class ProductController extends controller {
                     $nuevoProducto->description = $_POST['txt-descripcion'];
                     $nuevoProducto->price = $_POST['txt-costo'];
                     $nuevoProducto->stock = $_POST['txt-stock'];
-
+                    $nuevoProducto->rutaImagen = $ruta_imagen;
 
                     $this->model->create($nuevoProducto);
                 }
@@ -45,10 +98,56 @@ class ProductController extends controller {
                 echo "<script type='text/javascript'> document.location = 'index.php?control=administrador&action=menu-catalogo'; </script>";
 
 
-
                 break;
 
             case 'editar':
+                $directorio_imagenes = "imagenes_subidas/";
+                $ruta_imagen = $directorio_imagenes . basename($_FILES["subir-archivo"]["name"]);
+                $exito = 1;
+
+                $tipoImagen = strtolower(pathinfo($ruta_imagen, PATHINFO_EXTENSION));
+
+                // Validar imagen
+                if (isset($_POST["submit"])) {
+                    $validar = getimagesize($_FILES["subir-archivo"]["tmp_name"]);
+                    if ($validar !== false) {
+                        echo "Imagen - " . $validar["mime"] . ".";
+                        $exito = 1;
+                    } else {
+                        echo "El Archivo no es una imagen.";
+                        $exito = 0;
+                    }
+                }
+
+                // Validar si ya existe la imagen
+                if (file_exists($ruta_imagen)) {
+                    echo "El Archivo ya existe.";
+                    $exito = 0;
+                }
+
+                // Validar tamaño
+                if ($_FILES["subir-archivo"]["size"] > 500000) {
+                    echo "Imagen es demasiado grande.";
+                    $exito = 0;
+                }
+
+                // Validar formato
+                if($tipoImagen != "jpg" && $tipoImagen != "png" && $tipoImagen != "jpeg"
+                    && $tipoImagen != "gif" ) {
+                    echo "Formatos Permitidos: JPG, JPEG, PNG & GIF files.";
+                    $exito = 0;
+                }
+
+                // Validar si hubo error al subir archivo
+                if ($exito == 0) {
+                    echo "Hubo un error al subir imagen A.";
+                } else {
+                    if (move_uploaded_file($_FILES["subir-archivo"]["tmp_name"], $ruta_imagen)) {
+                        echo "La imagen ". htmlspecialchars( basename( $_FILES["subir-archivo"]["name"])). " se ha subido con exito.";
+                    } else {
+                        echo "Hubo un error al subir imagen B." . $_FILES["subir-archivo"]["tmp_name"];
+                    }
+                }
 
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $nuevoProducto = new Product();
@@ -59,6 +158,7 @@ class ProductController extends controller {
                     $nuevoProducto->description = $_POST['txt-descripcion'];
                     $nuevoProducto->price = $_POST['txt-costo'];
                     $nuevoProducto->stock = $_POST['txt-stock'];
+                    $nuevoProducto->rutaImagen = $ruta_imagen;
 
 
                     $this->model->editar($nuevoProducto);
@@ -83,10 +183,10 @@ class ProductController extends controller {
 
                 $categorias = $modeloCategoria->listar();
 
-                if(!empty($categorias)) {
+                if (!empty($categorias)) {
 
                     $startRow = strrpos($content, '<button id="categoria-filtro"');
-                    $endRow = strrpos($content, '</button>') ;
+                    $endRow = strrpos($content, '</button>');
 
                     $item = substr($content, $startRow, $endRow - $startRow);
 
@@ -96,6 +196,7 @@ class ProductController extends controller {
 
                         $dictionary = array(
                             '{filtro}' => $row['Categoria'],
+
 
                         );
 
@@ -109,11 +210,10 @@ class ProductController extends controller {
                 }
 
 
-
                 if (!empty($products)) {
 
                     $startRow = strrpos($content, '<div id="product-grid">');
-                    $endRow = strrpos($content, '</div>') ;
+                    $endRow = strrpos($content, '</div>');
 
                     $item = substr($content, $startRow, $endRow - $startRow);
 
@@ -123,9 +223,11 @@ class ProductController extends controller {
 
                         $dictionary = array(
                             '{productId}' => $row['ProductId'],
+                            '{idProducto}' => $row['ProductId'],
                             '{productName}' => $row['Name'],
                             '{productPrice}' => $row['Price'],
-                            '{productDescription}' => $row['Description']
+                            '{productDescription}' => $row['Description'],
+                            '{imagenProducto}' => $row['RUTA_IMAGEN'],
                         );
 
                         $newRow = strtr($newRow, $dictionary);
@@ -154,7 +256,8 @@ class ProductController extends controller {
                     '{idProducto}' => $producto[0]['ProductId'],
                     '{nombreProducto}' => $producto[0]['Name'],
                     '{precioProducto}' => $producto[0]['Price'],
-                    '{descripcionProducto}' => $producto[0]['Description']
+                    '{descripcionProducto}' => $producto[0]['Description'],
+                    '{imagenProducto}' => $producto[0]['RUTA_IMAGEN'],
                 );
 
                 $content = strtr($content, $diccionario);
@@ -165,7 +268,6 @@ class ProductController extends controller {
         }
 
     }
-
 
 
 }

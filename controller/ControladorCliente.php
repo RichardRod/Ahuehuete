@@ -52,48 +52,63 @@ class ControladorCliente extends Controller
 
             $item = substr($content, $startRow, $endRow - $startRow);
 
-            var_dump($_SESSION['Producto']);
+            //var_dump($_SESSION['Producto']);
 
+            $productoEncontrado = 0;
+
+            $cantidad = 1;
             $contador = 0;
             $total = 0;
+
+            $ultimoElemento = end($_SESSION['Producto']);
+
+
             foreach ($_SESSION['Producto'] as $row) {
+
 
                 $producto = null;
 
                 $newRow = $item;
 
 
-                if ($contador == 0) {
+
+                if ($contador == 0) { // si es el primer articulo viene el objeto plano
                     $producto = $this->modeloProducto->obtener($row);
 
+
                     $dictionary = array(
                         '{nombreProducto}' => $producto[0]['Name'],
                         '{idProducto}' => $producto[0]['ProductId'],
                         '{precio}' => $producto[0]['Price'],
+                        '{cantidad}' => $cantidad
                     );
 
                     $total = $total+  $producto[0]['Price'];
 
-                } else {
+                } else { // Si ya hay mas de 1 articulo es un arreglo que hay que sacar el primer elemento agregado
                     $producto = $this->modeloProducto->obtener($row['id']);
+
+
+
                     $dictionary = array(
                         '{nombreProducto}' => $producto[0]['Name'],
                         '{idProducto}' => $producto[0]['ProductId'],
                         '{precio}' => $producto[0]['Price'],
+                        '{cantidad}' => $cantidad
+
                     );
 
-                    $total = $total+  $producto[0]['Price'];
-
+                    $total = $total + $producto[0]['Price'];
 
 
                 }
 
 
 
-
                 $newRow = strtr($newRow, $dictionary);
                 $rows .= $newRow;
                 $contador++;
+                $cantidad = 1;
             }
 
 

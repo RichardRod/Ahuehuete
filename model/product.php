@@ -11,6 +11,7 @@ class Product
     public $description;
     public $price;
     public $stock;
+    public $rutaImagen;
 
     public function __construct()
     {
@@ -46,7 +47,7 @@ class Product
 
         try {
 
-            $statement = $this->connection->query("INSERT INTO Products (Name, Description, Price, Stock, Categoria) VALUES('$nuevoProducto->name', '$nuevoProducto->description', $nuevoProducto->price, $nuevoProducto->stock, '$nuevoProducto->categoria')");
+            $statement = $this->connection->query("INSERT INTO Products (Name, Description, Price, Stock, Categoria, RUTA_IMAGEN) VALUES('$nuevoProducto->name', '$nuevoProducto->description', $nuevoProducto->price, $nuevoProducto->stock, '$nuevoProducto->categoria', '$nuevoProducto->rutaImagen')");
 
         } catch (Exception $ex) {
             die($ex->getMessage());
@@ -69,16 +70,8 @@ class Product
     public function editar($producto)
     {
 
-        /*echo "----- EDITAR";
-
-        var_dump($producto);
-
-        echo "----- EDITAR";
-
-        echo "UPDATE Ahuehuete.Products SET Name='$producto->name', Description='$producto->description', Price=$producto->price, Stock=$producto->stock, Categoria='$producto->categoria' WHERE ProductId=$producto->productId";
-     */
         try {
-            $statement = $this->connection->query("UPDATE Products SET Name='$producto->name', Description='$producto->description', Price=$producto->price, Stock=$producto->stock, Categoria='$producto->categoria' WHERE ProductId=$producto->productId");
+            $statement = $this->connection->query("UPDATE Products SET Name='$producto->name', Description='$producto->description', Price=$producto->price, Stock=$producto->stock, Categoria='$producto->categoria', RUTA_IMAGEN='$producto->rutaImagen' WHERE ProductId=$producto->productId");
 
         } catch (Exception $ex) {
             die($ex->getMessage());
