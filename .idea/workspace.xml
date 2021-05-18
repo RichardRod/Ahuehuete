@@ -20,21 +20,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42bbe568-ac44-4d10-a62c-f853586ce532" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/model/Pedido.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Galeria/125567558_1336136143398092_5254363914691521318_n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Galeria/130527807_1347916268886746_1378114648097948253_n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Galeria/131934896_1354595991552107_6414853551338792105_n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Galeria/132025205_1356049274740112_6745044808450748285_n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Galeria/147310421_1389898394688533_598932407574397108_n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Galeria/167148593_1426549071023465_5542543184635051678_n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Galeria/173267630_1435159823495723_425082843298816535_n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Galeria/anuncio1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Galeria/anuncio2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Galeria/cafeteria1.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Galeria/cafeteria2.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/cart/finalizar-compra.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/ControladorAdministrador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ControladorAdministrador.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuration/env.php" beforeDir="false" afterPath="$PROJECT_DIR$/configuration/env.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/ControladorCarrito.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ControladorCarrito.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/ControladorCliente.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ControladorCliente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/ControladorContacto.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ControladorContacto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/ControladorGaleria.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ControladorGaleria.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/ControladorNosotros.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ControladorNosotros.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/productController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/productController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/administrador/catalogo/catalogo.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/administrador/catalogo/catalogo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/administrador/catalogo/formulario-editar.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/administrador/catalogo/formulario-editar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/cart/carrito.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/cart/carrito.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/administrador/pedidos/pedidos.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/administrador/pedidos/pedidos.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/cart/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/cart/checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/productos/productos.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/productos/productos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/productos/single-producto.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/productos/single-producto.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/~$uehuete doc.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/cliente/perfil.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/cliente/perfil.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/galeria/galeria.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/galeria/galeria.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/header/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/header/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/home/homepage-empleado.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/home/homepage-empleado.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +135,7 @@
       <workItem from="1620503083603" duration="12865000" />
       <workItem from="1620519943203" duration="4202000" />
       <workItem from="1620852025695" duration="36158000" />
-      <workItem from="1621275845700" duration="11870000" />
+      <workItem from="1621275845700" duration="17012000" />
     </task>
     <servers />
   </component>
@@ -148,10 +161,10 @@
     <state x="549" y="214" key="NewPhpClassDialog/0.23.1680.962@0.23.1680.962" timestamp="1621295309426" />
     <state x="549" y="215" key="NewPhpClassDialog/0.23.1680.963@0.23.1680.963" timestamp="1620919715087" />
     <state x="549" y="215" key="NewPhpClassDialog/0.23.1680.965@0.23.1680.965" timestamp="1620937470908" />
-    <state x="570" y="382" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1621277795187">
+    <state x="570" y="382" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1621309675994">
       <screen x="0" y="23" width="1680" height="962" />
     </state>
-    <state x="570" y="382" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.23.1680.962@0.23.1680.962" timestamp="1621277795187" />
+    <state x="570" y="382" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.23.1680.962@0.23.1680.962" timestamp="1621309675994" />
     <state x="570" y="382" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.23.1680.963@0.23.1680.963" timestamp="1621123967008" />
   </component>
 </project>

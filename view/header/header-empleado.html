@@ -8,9 +8,6 @@
 
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
 
     .llenar-imagen {
       height: 200px;
@@ -26,8 +23,13 @@
     }
 
     /* Style the body */
+
+    * {
+      box-sizing: border-box;
+      font-family: "Font Awesome 5 Brands";
+    }
+
     body {
-      font-family: Arial, Helvetica, sans-serif;
       margin: 0;
     }
 
@@ -84,17 +86,17 @@
     /* Change color on hover */
     .navbar a:hover {
       text-decoration: none;
-      color: #336699;
+      color: #3d3d3d;
     }
 
     /* Active/current link */
     .navbar a.active {
-      background-color: #003366;
+      background-color: #000000;
       color: white;
     }
 
     .navbar a.active:hover {
-      background-color: #336699;
+      background-color: #3d3d3d;
     }
 
     /* Column container */
@@ -112,7 +114,7 @@
     .side {
       -ms-flex: 30%; /* IE10 */
       flex: 30%;
-      background-color: #e1e5ea;
+      background-color: #f0f0f0;
       padding: 20px;
     }
 
@@ -121,15 +123,10 @@
       -ms-flex: 70%; /* IE10 */
       flex: 70%;
       background-color: white;
-      padding: 20px;
+      margin-bottom: 50px;
     }
 
-    /* Fake image, just for this example */
-    .fakeimg {
-      background-color: #aaa;
-      width: 100%;
-      padding: 20px;
-    }
+
 
     /* Footer */
     .footer {
@@ -159,7 +156,7 @@
       display: block;
       width: 100%;
       border: none;
-      background-color: #003366;
+      background-color: #000000;
       color: white;
       padding: 14px 28px;
       font-size: 16px;
@@ -172,7 +169,7 @@
     }
 
     .boton-grande:hover {
-      background-color: #336699;
+      background-color: #3d3d3d;
       color: white;
     }
   </style>
@@ -181,7 +178,7 @@
 <body>
 
 <div class="navbar">
-  <a href="index.php" class="active">Inicio</a>
+  <a href="index.php" class="active"><i class="fas fa-home "></i></a>
 
   <a href="index.php?control=session&action=logout" class="right">Cerrar Sesión</a>
   <a href="#" class="right">Hola, {nombre}</a>

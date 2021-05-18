@@ -36,6 +36,7 @@ class Product
                 $products[] = $row;
             }
 
+
             return $products;
         } catch (Exception $ex) {
             die($ex->getMessage());

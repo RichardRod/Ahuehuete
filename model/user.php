@@ -44,7 +44,7 @@ class User {
         echo '------';
         var_dump($user->correo);
         echo '------';
-        $sql = "SELECT * FROM Usuario WHERE CORREO = '$user->correo'";
+        $sql = "SELECT * FROM   Usuario WHERE CORREO = '$user->correo'";
 
         var_dump($sql);
 

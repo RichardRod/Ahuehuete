@@ -23,6 +23,11 @@ class ControladorCarrito extends Controller
     public function run()
     {
         switch ($_GET['action']) {
+
+            case 'finalizar-compra':
+                $this->mostrarFinalizarCompra();
+                break;
+
             case 'checkout':
                 $this->mostrarCheckout();
                 break;
@@ -114,5 +119,15 @@ class ControladorCarrito extends Controller
 
         echo $header . $content . $footer;
     }
+
+    private function mostrarFinalizarCompra()
+{
+    $header = file_get_contents('view/header/header-cliente.html');
+    $content = file_get_contents('view/cart/finalizar-compra.html');
+    $footer = file_get_contents('view/footer/footer.html');
+
+    echo $header . $content . $footer;
+
+}
 
 }

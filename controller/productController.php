@@ -171,9 +171,50 @@ class ProductController extends controller
 
             case 'list':
 
-                $header = file_get_contents('view/header/header.html');
-                $content = file_get_contents('view/productos/productos.html');
-                $footer = file_get_contents('view/footer/footer.html');
+                $header = null;
+                $content = null;
+                $footer = null;
+
+                if (!isset($_SESSION['loggedin'])) {
+                    $header = file_get_contents('view/header/header.html');
+                    $content = file_get_contents('view/productos/productos.html');
+                    $footer = file_get_contents('view/footer/footer.html');
+                } else {
+
+                    $header = null;
+                    $content = null;
+                    $footer = null;
+
+                    if ($_SESSION['tipoUsuario'] == 2) { // Usuario Privilegiado (Empleado)
+
+                        $header = file_get_contents('view/header/header-empleado.html');
+                        $content = file_get_contents('view/productos/productos.html');
+                        $footer = file_get_contents('view/footer/footer.html');
+
+                        $map = array(
+                            '{nombre}' => $_SESSION['nombre'],
+                        );
+
+                        $header = strtr($header, $map);
+
+                    } else if ($_SESSION['tipoUsuario'] == 1) { // Usuario Común (cliente)
+
+                        $header = file_get_contents('view/header/header-cliente.html');
+                        $content = file_get_contents('view/productos/productos.html');
+                        $footer = file_get_contents('view/footer/footer.html');
+
+                        $map = array(
+                            '{nombre}' => $_SESSION['nombre'],
+                            '{totalItems}' => count($_SESSION['Producto'])
+
+                        );
+
+                        $header = strtr($header, $map);
+                        $content = strtr($content, $map);
+                    }
+
+
+                }
 
 
                 $products = $this->model->listProducts();
@@ -196,7 +237,6 @@ class ProductController extends controller
 
                         $dictionary = array(
                             '{filtro}' => $row['Categoria'],
-
 
                         );
 
@@ -238,6 +278,8 @@ class ProductController extends controller
                     $content = str_replace($item, $rows, $content);
 
                 }
+
+
 
                 echo $header . $content;
 
