@@ -37,6 +37,10 @@ class SessionController extends controller
                 $this->sessionStart();
                 break;
 
+            case 'login-error':
+                $this->loginErrorForm();
+                break;
+
             case 'logout':
                 session_start();
                 session_destroy();
@@ -71,6 +75,15 @@ class SessionController extends controller
         }
     }
 
+    private function loginErrorForm()
+    {
+        $header = file_get_contents('view/header/header.html');
+        $content = file_get_contents('view/sesion/iniciar-sesion/formulario-iniciar-sesion-error.html');
+        $footer = file_get_contents('view/footer/footer.html');
+
+        echo $header . $content . $footer;
+    }
+
     private function loginForm()
     {
 
@@ -78,11 +91,20 @@ class SessionController extends controller
         $content = file_get_contents('view/sesion/iniciar-sesion/formulario-iniciar-sesion.html');
         $footer = file_get_contents('view/footer/footer.html');
 
+        $map = array(
+            '{{ mensajeError }}' => $_SESSION['MENSAJE_ERROR'],
+        );
+
+        $content = strtr($content, $map);
+
+
         echo $header . $content . $footer;
     }
 
     private function sessionStart()
     {
+
+        $_SESSION["MENSAJE_ERROR"] = "";
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $user = new User();
@@ -93,8 +115,10 @@ class SessionController extends controller
             $data = $this->model->getUser($user);
 
 
-            if (!isset($user)) {
-                echo 'El Usuario No Existe';
+            if (!isset($data)) {
+                $_SESSION["MENSAJE_ERROR"] = "Usuario No Existe";
+                echo "<script type='text/javascript'> document.location = 'index.php?control=session&action=login'; </script>";
+
             } else {
 
                 if (password_verify($_POST['txt-password'], $data['4'])) {
@@ -113,7 +137,8 @@ class SessionController extends controller
                     echo "<script type='text/javascript'> document.location = 'index.php'; </script>";
 
                 } else {
-                    echo 'Password Not Match';
+                    $_SESSION["MENSAJE_ERROR"] = "Contraseña Incorrecta";
+                    echo "<script type='text/javascript'> document.location = 'index.php?control=session&action=login'; </script>";
                 }
             }
 

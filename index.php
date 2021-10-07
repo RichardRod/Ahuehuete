@@ -69,9 +69,9 @@ switch ($_GET['control']) {
         $footer = null;
 
         if (!isset($_SESSION['loggedin'])) {
-            $header = file_get_contents('view/header/header.html');
-            $content = file_get_contents('view/home/homepage.html');
-            $footer = file_get_contents('view/footer/footer.html');
+            //$header = file_get_contents('view/header/header.html');
+            $content = file_get_contents('view/home/pagina-principal.html');
+            //$footer = file_get_contents('view/footer/footer.html');
         } else {
 
             $header = null;

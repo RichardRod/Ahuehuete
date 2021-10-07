@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ahuehuete Plant Shop</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./view/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Font Awesome 5 Brands";
+        }
+
+        /* Style the body */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+
+        /* Header/logo Title */
+        .header {
+            padding: 80px;
+            text-align: center;
+            background: #1A474D;
+            color: white;
+        }
+
+        /* Increase the font size of the heading */
+        .header h1 {
+            font-size: 40px;
+        }
+
+        /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
+        .navbar {
+            overflow: hidden;
+            background-color: #7CAAA0;
+            position: sticky;
+            position: -webkit-sticky;
+            top: 0;
+            font-size: 20px;
+        }
+
+        /* Style the navigation bar links */
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+
+        /* Right-aligned link */
+        .navbar a.right {
+            float: right;
+        }
+
+        /* Change color on hover */
+        .navbar a:hover {
+            background-color: #A5B38F;
+            color: #ffffff;
+        }
+
+        /* Active/current link */
+        .navbar a.active {
+            background-color: #A5B38F;
+            color: white;
+        }
+
+        .navbar a.active:hover {
+            background-color: #AB7246;
+            color: white;
+        }
+
+        /* Column container */
+        .row {
+            display: -ms-flexbox; /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap; /* IE10 */
+            flex-wrap: wrap;
+        }
+
+        /* Create two unequal columns that sits next to each other */
+        /* Sidebar/left column */
+        .side {
+            -ms-flex: 30%; /* IE10 */
+            flex: 30%;
+            background-color: #f1f1f1;
+            padding: 20px;
+        }
+
+        /* Main column */
+        .main {
+            -ms-flex: 70%; /* IE10 */
+            flex: 70%;
+            background-color: white;
+            padding: 20px;
+        }
+
+        /* Fake image, just for this example */
+        .fakeimg {
+            background-color: #aaa;
+            width: 100%;
+            padding: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: #809E9E;
+            color: #ffffff;
+        }
+
+        /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 700px) {
+            .row {
+                flex-direction: column;
+            }
+        }
+
+        /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+        @media screen and (max-width: 400px) {
+            .navbar a {
+                float: none;
+                width: 100%;
+            }
+        }
+
+        /* Dropdown */
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 20px;
+            border: none;
+            outline: none;
+            color: #000000;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3d3d3d;
+            color: white;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #3d3d3d;
+            color: white;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .float-container {
+            border: 0px solid #fff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .float-child {
+            width: 50%;
+            float: left;
+            padding: 5px;
+        }
+
+        .llenar-imagen img {
+            display: block;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            background-size: contain;
+
+        }
+
+        .boton-grande {
+            display: block;
+            width: 100%;
+            border: none;
+            background-color: #1A474D;
+            color: white;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .boton-grande:hover {
+            background-color: #AB7246;
+            text-decoration: none;
+        }
+
+        /*
+         * Slider
+         */
+        * {box-sizing: border-box}
+        body {font-family: Verdana, sans-serif; margin:0}
+        .mySlides {display: none}
+        img {vertical-align: middle;}
+
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 100%;
+
+            position: relative;
+            margin: auto;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+            .prev, .next,.text {font-size: 11px}
+        }
+
+
+        /* Breadcrums */
+
+        .contenedor-breadcrum {
+
+        }
+
+        ul.breadcrumb {
+            padding: 10px 16px;
+            list-style: none;
+        }
+        ul.breadcrumb li {
+            display: inline;
+            font-size: 18px;
+        }
+        ul.breadcrumb li+li:before {
+            padding: 8px;
+            color: black;
+            content: "/\00a0";
+        }
+        ul.breadcrumb li a {
+            color: #0275d8;
+            text-decoration: none;
+        }
+        ul.breadcrumb li a:hover {
+            color: #01447e;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div>
+        <img src="./images/logos/Ahuehuete_azul.png" alt="an artist's rendition of a black hole in space" style="width:150px;height:150px;">
+    </div>
+    <h2><b>Ahuehuete</b> Plant Shop</h2>
+</div>
+
+<div class="navbar">
+    <a href="#" class="active"><i class="fas fa-home"></i></a>
+    <a href="index.php?control=products&action=list"><i class="fas fa-store-alt"></i> Productos</a>
+    <a href="#"><i class="fas fa-id-card"></i> Nosotros</a>
+    <a href="#"><i class="fas fa-images"></i> Galería</a>
+    <a href="#"><i class="fas fa-file-signature"></i> Contacto</a>
+
+    <a href="#" class="right"><i class="fas fa-shopping-cart"></i> Carrito</a>
+    <a href="index.php?control=session&action=registrarse" class="right"><i class="fas fa-user-plus"></i> Registro</a>
+    <a href="index.php?control=session&action=login" class="right"><i class="fas fa-users"></i> Iniciar Sesión</a>
+
+
+
+
+</div>
+
+
+
+<!--<div class="slideshow-container">
+
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="./images/home-todas.jpeg" style="width:100%">
+        <div class="text">Caption Text</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="./images/suculentas-home.jpeg" style="width:100%">
+        <div class="text">Caption Two</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="./images/home-todas.jpeg" style="width:100%">
+        <div class="text">Caption Three</div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>-->
+
+<div class="contenedor-breadcrum">
+    <ul class="breadcrumb">
+        <li><a href="index.php">Inicio</a></li>
+        <li><a href="#"></a></li>
+    </ul>
+</div>
+
+<div class="row">
+    <div class="side">
+
+        <h2>Inicia sesión para una mejor experiencia</h2>
+        <a href="index.php?control=session&action=login"><button class="boton-grande">Iniciar Sesión</button></a>
+
+
+        <h2>Ver Productos</h2>
+        <h5>Conoce todas nuestras categorias:</h5>
+        <div class="llenar-imagen">
+            <a href="index.php?control=session&action=login">
+                <img src="./images/home-todas.jpeg" alt="" />
+
+            </a>
+
+
+        </div>
+        <p>Navega entre todas las distintas categorias que tenemos para ti.</p>
+
+        <h3>Lo más vendido</h3>
+        <p>Conoce las categorias más vendidas:</p>
+        <div class="llenar-imagen" style="height:90px;">
+            <img src="./images/home-flores.jpeg" alt="" />
+        </div><br>
+        <div class="llenar-imagen" style="height:90px;">
+            <img src="./images/suculentas-home.jpeg" alt="" />
+        </div><br>
+        <div class="llenar-imagen" style="height:90px;">
+            <img src="./images/arboles-home.jpeg" alt="" />
+        </div>
+    </div>
+    <div class="main">
+
+        <h2>Macetas</h2>
+        <h5>Descubre las macetas que tenemos para tí</h5>
+        <div class="llenar-imagen" style="height:200px;">
+            <img src="./images/img_user_session.png" alt="" />
+        </div>
+        <p>Some text..</p>
+        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+        <br>
+
+        <h2>Interior</h2>
+        <h5>Plantas de interior</h5>
+        <div class="llenar-imagen" style="height:200px;">
+            <img src="./images/home-todas.jpeg" alt="" />
+        </div>
+        <p>Some text..</p>
+        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+        <br>
+
+        <h2>Exterior</h2>
+        <h5>Plantas de interior</h5>
+        <div class="llenar-imagen" style="height:200px;">
+            <img src="./images/arboles-home.jpeg" alt="" />
+        </div>
+        <p>Some text..</p>
+        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+        <br>
+
+
+    </div>
+</div>
+
+<div class="footer">
+    <h2>Footer</h2>
+</div>
+
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+    }
+</script>
+
+</body>
+</html>

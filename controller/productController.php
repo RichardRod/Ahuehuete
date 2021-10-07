@@ -288,6 +288,8 @@ class ProductController extends controller
 
             case 'single':
 
+
+
                 $header = file_get_contents('view/header/header.html');
                 $content = file_get_contents('view/productos/single-producto.html');
                 $footer = file_get_contents('view/footer/footer.html');

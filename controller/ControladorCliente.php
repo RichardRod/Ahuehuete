@@ -111,37 +111,23 @@ class ControladorCliente extends Controller
                 $newRow = $item;
 
 
-
                 if ($contador == 0) { // si es el primer articulo viene el objeto plano
                     $producto = $this->modeloProducto->obtener($row);
-
-
-                    $dictionary = array(
-                        '{nombreProducto}' => $producto[0]['Name'],
-                        '{idProducto}' => $producto[0]['ProductId'],
-                        '{precio}' => $producto[0]['Price'],
-                        '{cantidad}' => $cantidad
-                    );
-
-                    $total = $total+  $producto[0]['Price'];
 
                 } else { // Si ya hay mas de 1 articulo es un arreglo que hay que sacar el primer elemento agregado
                     $producto = $this->modeloProducto->obtener($row['id']);
 
-
-
-                    $dictionary = array(
-                        '{nombreProducto}' => $producto[0]['Name'],
-                        '{idProducto}' => $producto[0]['ProductId'],
-                        '{precio}' => $producto[0]['Price'],
-                        '{cantidad}' => $cantidad
-
-                    );
-
-                    $total = $total + $producto[0]['Price'];
-
-
                 }
+
+                $dictionary = array(
+                    '{nombreProducto}' => $producto[0]['Name'],
+                    '{idProducto}' => $producto[0]['ProductId'],
+                    '{precio}' => $producto[0]['Price'],
+                    '{cantidad}' => $cantidad
+                );
+
+                $total = $total + $producto[0]['Price'];
+
 
 
 
