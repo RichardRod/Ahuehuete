@@ -24,19 +24,24 @@ class User {
 
     public function create(User $user)
     {
-        $password = password_hash($user->password, PASSWORD_DEFAULT);
+        $user = $this->getUser($user->correo);
+        if ($user) {
+            echo "Ususario ya existe";
+        } else {
+            $password = password_hash($user->password, PASSWORD_DEFAULT);
 
-        $sqlQuery = "INSERT INTO Usuario(NOMBRE, CORREO, TELEFONO, PASSWORD, FECHA_REGISTRO, TIPO_USUARIO) 
+            $sqlQuery = "INSERT INTO Usuario(NOMBRE, CORREO, TELEFONO, PASSWORD, FECHA_REGISTRO, TIPO_USUARIO) 
                     VALUES('$user->nombre', '$user->correo', '$user->telefono', '$password', CURRENT_TIMESTAMP, 1)";
 
-
-        try
-        {
-            $this->connection->query($sqlQuery);
-        } catch (Exception $ex)
-        {
-            echo $ex;
+            try
+            {
+                $this->connection->query($sqlQuery);
+            } catch (Exception $ex)
+            {
+                echo $ex;
+            }
         }
+
     }
 
     public function getUser(User $user)
